@@ -10,18 +10,21 @@
 
 <div id="wrapper">
 
-    <section id="scr-home">
+    <!-- De sections is om de pagina's te scheiden.
+    Onderdelen in section krijgen een id met "scr" en dan de naam van het scherm. 
+    "scr" = "screen" -->
+    <div id="scr-home">
         
-    
+        <section>
+            <img class="logo" src="img/logo.png" alt="Ken je app logo">
+            <h1 id="innerText">Met hoeveel spelers wilt u spelen?</h1>
+        </section>
 
-        <div id="selectdiv">
-            <button id="add1" onclick="twoPlayer()">2 Spelers</button>
-            <button id="add2" onclick="threePlayer()">3 Spelers</button>
-            <button id="add3" onclick="fourPlayer()">4 Spelers</button><br/>
-            <div><h1 id="innerText">Selecteer het aantal spelers</h1></div><br/>
-            <button id="Volgende" onclick="hide1()">Volgende</button>
-        </div>
-    </section>
+        <button id="add1" onclick="twoPlayer()">2 Spelers</button>
+        <button id="add2" onclick="threePlayer()">3 Spelers</button>
+        <button id="add3" onclick="fourPlayer()">4 Spelers</button>
+        <br/><button id="Volgende" onclick="hide1()">Volgende</button>
+    </div>
 
     <div id="changeNameDiv">
         <div id="changeGreen"><h2 id="greenHead">Player 1</h2>
@@ -53,6 +56,7 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="script.js"></script>
 

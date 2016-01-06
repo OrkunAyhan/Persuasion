@@ -47,7 +47,7 @@ console.log(playerNumber.length);
 
 function hide1(){
     console.log("Volgende1");
-    document.getElementById("selectdiv").style.visibility = "hidden";
+    document.getElementById("scr-home").style.visibility = "hidden";
     document.getElementById("changeNameDiv").style.visibility = "visible";
     writeNames();
 }

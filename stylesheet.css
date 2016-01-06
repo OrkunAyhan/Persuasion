@@ -10,6 +10,26 @@ body {
     margin:0;
 }
 
+@font-face {
+    font-family: 'GeorgiaPro-Light';
+    src: url('GeorgiaPro-CondLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GeorgiaPro-Regular';
+    src: url('GeorgiaPro-CondRegular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GeorgiaPro-Semibold';
+    src: url('GeorgiaPro-CondSemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GeorgiaPro-Bold';
+    src: url('GeorgiaPro-CondBold.ttf') format('truetype');
+}
+
 #wrapper{
     /*width:500px;
     height:700px;
@@ -18,8 +38,22 @@ body {
 }
 
 h1{
+    font-family: 'GeorgiaPro-CondBold', serif;
     margin:20px 0 0 0;
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~HOME~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.logo {
+    width: 260px;
+    height: auto;
+}
+
+#innerText {
+    display: block;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~END HOME~~~~~~~~~~~~~~~~~~~~~~*/
 
 #speldiv{
     visibility:hidden;
