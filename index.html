@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+
+<div id="wrapper">
+
+    <div id="selectdiv">
+        <button id="add1" onclick="twoPlayer()">2 Spelers</button>
+        <button id="add2" onclick="threePlayer()">3 Spelers</button>
+        <button id="add3" onclick="fourPlayer()">4 Spelers</button><br/>
+        <div><h1 id="innerText">Selecteer het aantal spelers</h1></div><br/>
+        <button id="Volgende" onclick="hide1()">Volgende</button>
+    </div>
+
+    <div id="changeNameDiv">
+        <div id="changeGreen"><h2 id="greenHead">Player 1</h2>
+            <input type="text" name="fname">
+            <button id="butGreen">Edit name</button>
+        </div>
+        <div id="changeRed"><h2 id="redHead">Player 2</h2>
+            <input type="text" name="fname">
+            <button id="butRed">Edit name</button>
+        </div>
+        <div id="changeBlue"><h2 id="blueHead">Player 3</h2>
+            <input type="text" name="fname">
+            <button id="butBlue">Edit name</button>
+        </div>
+        <div id="changeYellow"><h2 id="yellowHead">Player 4</h2>
+            <input type="text" name="fname">
+            <button id="butYellow">Edit name</button>
+        </div>
+        <div>
+            <button id="Volgende2" onclick="hide2()">Volgende</button>
+        </div>
+    </div>
+
+
+    <div id="speldiv">
+
+        <button id="click" onclick="rolClick()">Roll The Dice</button>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
