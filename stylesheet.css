@@ -12,22 +12,26 @@ body {
 
 @font-face {
     font-family: 'GeorgiaPro-Light';
-    src: url('GeorgiaPro-CondLight.ttf') format('truetype');
+    src: url('font/GeorgiaPro-CondLight.woff') format('woff'),
+         url('font/GeorgiaPro-CondLight.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'GeorgiaPro-Regular';
-    src: url('GeorgiaPro-CondRegular.ttf') format('truetype');
+    src: url('font/GeorgiaPro-CondRegular.woff') format('woff'),
+         url('font/GeorgiaPro-CondRegular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'GeorgiaPro-Semibold';
-    src: url('GeorgiaPro-CondSemiBold.ttf') format('truetype');
+    src: url('font/GeorgiaPro-CondSemiBold.woff') format('woff'),
+         url('font/GeorgiaPro-CondSemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'GeorgiaPro-Bold';
-    src: url('GeorgiaPro-CondBold.ttf') format('truetype');
+    src: url('font/GeorgiaPro-CondBold.woff') format('woff'),
+         url('font/GeorgiaPro-CondBold.ttf') format('truetype');
 }
 
 #wrapper{
@@ -38,8 +42,9 @@ body {
 }
 
 h1{
-    font-family: 'GeorgiaPro-CondBold', serif;
-    margin:20px 0 0 0;
+    font-family: 'GeorgiaPro-Light', serif;
+    font-size: 2em;
+    padding:20px 0 0 0;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~HOME~~~~~~~~~~~~~~~~~~~~~~~~*/
