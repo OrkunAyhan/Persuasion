@@ -56,6 +56,22 @@ function hide2(){
     console.log("Volgende2");
     document.getElementById("changeNameDiv").style.visibility = "hidden";
     document.getElementById("speldiv").style.visibility = "visible";
+    if(playerNumber.length == 2){
+        // REMOVE PLAYER 3 & 4 FROM GAME
+        players.splice(2,2);
+        document.getElementById("p3div").remove();
+        document.getElementById("p4div").remove();
+        document.getElementById("p3position").remove();
+        document.getElementById("p4position").remove();
+        console.log("De lengte hiervan is " + playerNumber.length);
+    }else if(playerNumber.length == 3){
+        players.splice(3,1);
+        document.getElementById("p4div").remove();
+        console.log("De lengte hiervan is " + playerNumber.length);
+    }else if(playerNumber.length == 4){
+        console.log("De lengte hiervan is " + playerNumber.length);
+    };
+    console.log(players);
 }
 
 //=================================== SPELERS GEDEELTE EN NAAM AANPASSEN ==============================
