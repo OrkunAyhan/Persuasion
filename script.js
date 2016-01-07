@@ -67,6 +67,7 @@ function hide2(){
     }else if(playerNumber.length == 3){
         players.splice(3,1);
         document.getElementById("p4div").remove();
+        document.getElementById("p4position").remove();
         console.log("De lengte hiervan is " + playerNumber.length);
     }else if(playerNumber.length == 4){
         console.log("De lengte hiervan is " + playerNumber.length);
@@ -98,20 +99,35 @@ function writeNames(){
 
 
 var players = [
-    {name: "Player 1", positie: 0},
-    {name: "Player 2", positie: 0},
-    {name: "Player 3", positie: 0},
-    {name: "Player 4", positie: 0}
+    {
+        name: "Player 1",
+        positie: 0
+    },
+    {
+        name: "Player 2",
+        positie: 0
+    },
+    {
+        name: "Player 3",
+        positie: 0
+    },
+    {
+        name: "Player 4",
+        positie: 0
+    }
 ];
+
 var position = 0;
-var currentPlayer = players[position];
+var currentPlayer = null;
 
 function rolClick(){
-    currentPlayer = players[position++];
-    if (position > players.length){
+
+    if (position >= players.length){
         position = 0;
-        currentPlayer = players[position];
+        //currentPlayer = players[position];
     }
+    currentPlayer = players[position++];
+
     var rollen = Math.floor(Math.random() * 6) + 1;
     if (rollen === 1){
         currentPlayer.positie += 1;
@@ -134,8 +150,12 @@ function rolClick(){
     }else {
         console.log("Oops, er is iets fout gegaan.")
     };
-    console.log(players.length);
+    document.getElementById("p1position").innerHTML = players[0].positie;
+    document.getElementById("p2position").innerHTML = players[1].positie;
+    document.getElementById("p3position").innerHTML = players[2].positie;
+    document.getElementById("p4position").innerHTML = players[3].positie;
 
     console.log(currentPlayer);
 };
+
 

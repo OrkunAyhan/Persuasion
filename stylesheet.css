@@ -150,3 +150,50 @@ h1{
 input{
     margin:10px 0 10px 0;
 }
+
+/* Het positioneren van de speler en daarnaast zijn positie*/
+
+/* player 1*/
+#p1div{
+    float:left;
+    background-color:green;
+}
+#p1position{
+    float:left;
+    background-color:red;
+}
+/* player 2*/
+#p2div{
+    clear:both;
+    float:left;
+    background-color:green;
+}
+#p2position{
+    float:left;
+    background-color:red;
+}
+/* player 3*/
+#p3div{
+    clear:both;
+    float:left;
+    background-color:green;
+}
+#p3position{
+    float:left;
+    background-color:red;
+}
+/* player 4*/
+#p4div{
+    clear:both;
+    float:left;
+    background-color:green;
+}
+#p4position{
+    float:left;
+    background-color:red;
+}
+/*Dit is de button voor de dobbelstenen*/
+#click{
+    clear:both;
+    float:left;
+}
