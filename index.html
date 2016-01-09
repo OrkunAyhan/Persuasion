@@ -13,6 +13,8 @@
     <!-- De sections is om de pagina's te scheiden.
     Onderdelen in section krijgen een id met "scr" en dan de naam van het scherm. 
     "scr" = "screen" -->
+
+    <!-- Scherm 1 -->
     <div id="scr-home">
         <div class="shape1">        
             <section>
@@ -27,7 +29,13 @@
         <br/><button id="Volgende" onclick="hide1()">Volgende</button>
     </div>
 
-    <div id="changeNameDiv">
+    <!-- Scherm 2 -->
+    <div id="scr-">
+        
+    </div>
+
+    <!-- Naam invoeren -->
+<!--     <div id="changeNameDiv">
         <div id="changeGreen"><h2 id="greenHead">Player 1</h2>
             <input type="text" name="fname">
             <button id="butGreen">Edit name</button>
@@ -47,9 +55,9 @@
         <div>
             <button id="Volgende2" onclick="hide2()">Volgende</button>
         </div>
-    </div>
+    </div> -->
 
-
+    <!-- Spelers incl. positie -->
     <div id="speldiv">
         <div id="p1div">Player <strong>1</strong> positie:</div><div id="p1position">0</div>
         <div id="p2div">Player <strong>2</strong> positie:</div><div id="p2position">0</div>
@@ -59,10 +67,30 @@
     </div>
 </div>
 
+<!-- Opdracht 1 -->
+<div id="scr-task-1">
+    <section>
+        <div id="no-drop" class="drag-drop square"></div>
+        <div id="no-drop" class="drag-drop square shape-outline"></div>
+        <div id="no-drop" class="drag-drop circle shape-outline"></div>
+
+        <div id="yes-drop" class="drag-drop circle"></div>
+        <div id="yes-drop" class="drag-drop circle"></div>
+
+        <!-- <div id="outer-dropzone" class="dropzone"> -->
+          <!-- #outer-dropzone -->
+          <div id="inner-dropzone" class="dropzone"></div>
+        <!-- </div> -->
+    </section>   
+</div>
+
+
+<script src="lib/interact.min.js"></script>
+<!-- <script src="lib/hammer.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="script.js"></script>
-
+<script src="js/animation.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
