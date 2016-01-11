@@ -118,7 +118,25 @@ var players = [
 ];
 
 var position = 0;
-var currentPlayer = null;
+var currentPlayer = players[position];
+
+function writePlayerPos(){
+    if(players.length === 1) {
+        document.getElementById("p1position").innerHTML = players[0].positie;
+    }else if(players.length === 2){
+        document.getElementById("p1position").innerHTML = players[0].positie;
+        document.getElementById("p2position").innerHTML = players[1].positie;
+    }else if(players.length === 3){
+        document.getElementById("p1position").innerHTML = players[0].positie;
+        document.getElementById("p2position").innerHTML = players[1].positie;
+        document.getElementById("p3position").innerHTML = players[2].positie;
+    }else if(players.length === 4){
+        document.getElementById("p1position").innerHTML = players[0].positie;
+        document.getElementById("p2position").innerHTML = players[1].positie;
+        document.getElementById("p3position").innerHTML = players[2].positie;
+        document.getElementById("p4position").innerHTML = players[3].positie;
+    }else{console.log("ik snap het ook niet")}
+};
 
 function rolClick(){
 
@@ -131,31 +149,23 @@ function rolClick(){
     var rollen = Math.floor(Math.random() * 6) + 1;
     if (rollen === 1){
         currentPlayer.positie += 1;
-        console.log("het is 1")
     }else if(rollen === 2){
         currentPlayer.positie += 2;
-        console.log("het is 2")
     }else if(rollen === 3){
         currentPlayer.positie += 3;
-        console.log("het is 3")
     }else if(rollen === 4){
         currentPlayer.positie += 4;
-        console.log("het is 4")
     }else if(rollen === 5){
         currentPlayer.positie += 5;
-        console.log("het is 5")
     }else if(rollen === 6){
         currentPlayer.positie += 6;
-        console.log("het is 6")
     }else {
-        console.log("Oops, er is iets fout gegaan.")
     };
-    document.getElementById("p1position").innerHTML = players[0].positie;
-    document.getElementById("p2position").innerHTML = players[1].positie;
-    document.getElementById("p3position").innerHTML = players[2].positie;
-    document.getElementById("p4position").innerHTML = players[3].positie;
-
-    console.log(currentPlayer);
+    writePlayerPos();
+    //console.log(currentPlayer);
+    if(currentPlayer.positie === 6){
+        console.log(currentPlayer.name, " staat op vakje 6")
+    }console.log(currentPlayer);
 };
 
 
@@ -165,66 +175,66 @@ function rolClick(){
 // ==========================================
 
 // Dropzone = Waar de elementen in geslepen gaan worden
-// "interact" is om aan te geven dat het genoemde element 
+// "interact" is om aan te geven dat het genoemde element
 // interactie mogelijkheden krijgt.
 interact('.dropzone')
 // Enable draggables to be dropped into this
-  .dropzone(true)
-// only accept elements matching this CSS selector
-  .accept('#yes-drop')
-// listen for drop related events
-// 'dragenter' zorgt ervoor dat er een interactie plaats vind 
-// wanneer er wat over de dropzone komt 
-  .on('dragenter', function(event) {
+    .dropzone(true)
+    // only accept elements matching this CSS selector
+    .accept('#yes-drop')
+    // listen for drop related events
+    // 'dragenter' zorgt ervoor dat er een interactie plaats vind
+    // wanneer er wat over de dropzone komt
+    .on('dragenter', function(event) {
 // event.relatedTarget is het element dat wordt gesleept.
-    var draggableElement = event.relatedTarget,
-// event.target is het element van de dropzone, dit wordt uit 
+        var draggableElement = event.relatedTarget,
+// event.target is het element van de dropzone, dit wordt uit
 // de code gelezen
-      dropzoneElement = event.target;
+            dropzoneElement = event.target;
 
-// Visuele en textuele feedback wanneer elementen 
+// Visuele en textuele feedback wanneer elementen
 // gesleept worden.
-    dropzoneElement.classList.add('drop-target');
-    draggableElement.classList.add('can-drop');
+        dropzoneElement.classList.add('drop-target');
+        draggableElement.classList.add('can-drop');
 // draggableElement.textContent = 'Dragged in';
-  })
-// 'dragleave' wordt activeerd wanneer de gerelateerde 
-// elementen de dropzone verlaten
-  .on('dragleave', function(event) {
-// Dit haalt de visuele en textuele feedback van 
+    })
+    // 'dragleave' wordt activeerd wanneer de gerelateerde
+    // elementen de dropzone verlaten
+    .on('dragleave', function(event) {
+// Dit haalt de visuele en textuele feedback van
 // hierboven weg
-    event.target.classList.remove('drop-target');
-    event.relatedTarget.classList.remove('can-drop');
+        event.target.classList.remove('drop-target');
+        event.relatedTarget.classList.remove('can-drop');
 // event.relatedTarget.textContent = 'Dragged out';
-  })
-// Dit is de textuele feedback voor wanneer het in de 
+    })
+// Dit is de textuele feedback voor wanneer het in de
 // dropzone losgelaten wordt
-  // .on('drop', function(event) {
-  //   event.relatedTarget.textContent = 'Dropped';
-  // });
+// .on('drop', function(event) {
+//   event.relatedTarget.textContent = 'Dropped';
+// });
 
 // Hiermee kunnen we elementen "drap 'n drop" baar maken
 // Door de class="drag-drop" toe te voegen kan je dit doen.
 interact('.drag-drop')
-  .draggable({
-// Dit zorgt er allemaal voor dat je het kan rondbewegen 
+    .draggable({
+// Dit zorgt er allemaal voor dat je het kan rondbewegen
 // en dat het blijft staan op de plek waar je het loslaat
-    onmove: function(event) {
-      var target = event.target;
+        onmove: function(event) {
+            var target = event.target;
 
-      target.x = (target.x | 0) + event.dx;
-      target.y = (target.y | 0) + event.dy;
+            target.x = (target.x | 0) + event.dx;
+            target.y = (target.y | 0) + event.dy;
 
-      target.style.webkitTransform = target.style.transform =
-        'translate(' + target.x + 'px, ' + target.y + 'px)';
-    }
-  })
+            target.style.webkitTransform = target.style.transform =
+                'translate(' + target.x + 'px, ' + target.y + 'px)';
+        }
+    })
 
-// Dit laat het drap 'n drop gebeure vloeiend lopen
-  .inertia(true)
-  .restrict({
-    drag: 'parent'
-  });
+    // Dit laat het drap 'n drop gebeure vloeiend lopen
+    .inertia(true)
+    .restrict({
+        drag: 'parent'
+    });
 
 
 // ==========================================
