@@ -45,6 +45,8 @@ function fourPlayer(){
 }
 console.log(playerNumber.length);
 
+//====================================== CODE VOOR HET GAAN NAAR DE VOLGENDE SCHERMEN =================================
+
 function hide1(){
     console.log("Volgende1");
     document.getElementById("scr-home").style.visibility = "hidden";
@@ -75,7 +77,7 @@ function hide2(){
     console.log(players);
 }
 
-//=================================== SPELERS GEDEELTE EN NAAM AANPASSEN ==============================
+//======================================= SPELERS GEDEELTE ===================================
 
 function writeNames(){
     if (playerNumber.length == 1){
@@ -116,6 +118,62 @@ var players = [
         positie: 0
     }
 ];
+
+//================================ KIJKT WAAR JE STAA TOP HET BORD, CODE VOOR DE OPDRACHTEN ===============================
+
+function locForTest(){
+    if(currentPlayer.positie === 5){
+        console.log(currentPlayer.name, " staat op vakje 5")
+    }else if(currentPlayer.positie === 9){
+        console.log(currentPlayer.name, " staat op vakje 9")
+    }else if(currentPlayer.positie === 14){
+        console.log(currentPlayer.name, " staat op vakje 14")
+    }else if(currentPlayer.positie === 18){
+        console.log(currentPlayer.name, " staat op vakje 18")
+    }else if(currentPlayer.positie === 23){
+        console.log(currentPlayer.name, " staat op vakje 23")
+    }else if(currentPlayer.positie === 27){
+        console.log(currentPlayer.name, " staat op vakje 27")
+    }else if(currentPlayer.positie === 32){
+        console.log(currentPlayer.name, " staat op vakje 32")
+    }else if(currentPlayer.positie === 36){
+        console.log(currentPlayer.name, " staat op vakje 36")
+    }else if(currentPlayer.positie === 41){
+        console.log(currentPlayer.name, " staat op vakje 41")
+    }else if(currentPlayer.positie === 45){
+        console.log(currentPlayer.name, " staat op vakje 45")
+    }else if(currentPlayer.positie === 50){
+        console.log(currentPlayer.name, " staat op vakje 50")
+    }else if(currentPlayer.positie === 54){
+        console.log(currentPlayer.name, " staat op vakje 54")
+    }else if(currentPlayer.positie === 58){
+        console.log(currentPlayer.name, " staat op vakje 58")
+    }
+};
+
+//========================================== CODE VOOR NOG EEN KEER ROLLEN =======================================
+
+//function secondRoll(){
+//    if(currentPlayer.positie === 6){
+//        var rollen2 = Math.floor(Math.random() * 6) + 1;
+//        if (rollen2 === 1){
+//            currentPlayer.positie += 1;
+//        }else if(rollen2 === 2){
+//            currentPlayer.positie += 2;
+//        }else if(rollen2 === 3){
+//            currentPlayer.positie += 3;
+//        }else if(rollen2 === 4){
+//            currentPlayer.positie += 4;
+//        }else if(rollen2 === 5){
+//            currentPlayer.positie += 5;
+//        }else if(rollen2 === 6){
+//            currentPlayer.positie += 6;
+//        }writePlayerPos();
+//    }else {console.log("geen dubbel roll")}
+//
+//};
+
+//==================================== ROLLEN MET DOBBELSTENEN EN POSITIE AANPASSEN =================================
 
 var position = 0;
 var currentPlayer = players[position];
@@ -159,13 +217,10 @@ function rolClick(){
         currentPlayer.positie += 5;
     }else if(rollen === 6){
         currentPlayer.positie += 6;
-    }else {
-    };
+    }else {};
     writePlayerPos();
-    //console.log(currentPlayer);
-    if(currentPlayer.positie === 6){
-        console.log(currentPlayer.name, " staat op vakje 6")
-    }console.log(currentPlayer);
+    locForTest();
+    console.log(currentPlayer);
 };
 
 
