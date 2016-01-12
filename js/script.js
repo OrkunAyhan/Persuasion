@@ -208,7 +208,7 @@ function rolClick(){
         players[position--];
     }else if(currentPlayer.positie === 42){
         console.log("je stond op 42");
-        currentPlayer.positie = 39;
+        setTimeout(function(){currentPlayer.positie = 39;}, 3000);
         writePlayerPos();
     }
     console.log(currentPlayer);

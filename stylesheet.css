@@ -93,6 +93,7 @@ h1{
         height:400px;*/
     border: 1px solid;
     padding:4px;
+    top:0;
 }
 
 #changeNameDiv{
@@ -103,6 +104,7 @@ h1{
     visibility: hidden;
     border: 1px solid;
     padding:4px;
+    top:0;
 }
 #selectdiv{
     position:absolute;
