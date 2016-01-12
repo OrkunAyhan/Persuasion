@@ -16,13 +16,14 @@
 
     <!-- Scherm 1 -->
     <div id="scr-home">
-        <div class="shape1">
+        <div class="shape1">        
             <section>
                 <img class="logo" src="img/logo.png" alt="Ken je app logo">
-                <h1 id="innerText">Met hoeveel spelers wilt u spelen?</h1>
+                <h1 id="innerText">Het leerzame spel voor en <br> over de iPad</h1>
             </section>
         </div>
 
+        <h1>Met hoeveel spelers willen jullie spelen?</h1>
         <button id="add1" onclick="twoPlayer()">2 Spelers</button>
         <button id="add2" onclick="threePlayer()">3 Spelers</button>
         <button id="add3" onclick="fourPlayer()">4 Spelers</button>
@@ -30,24 +31,56 @@
     </div>
 
     <!-- Scherm 2 -->
-    <div id="scr-">
+    <div id="scr-intro">
+        <div class="shape2">   
+            <button onclick="#">Terug</button>
+            <img class="logo" src="img/logo.png" alt="Ken je app logo">
+        </div>
 
+        <h3><span>3 spelers gekozen</span><br>Zorg ervoor dat de juiste pionen bij de hand heeft voordat jullie het spel beginnen</h3>
+
+        <div class="player-color">
+            <div class="color-r"></div>
+            <h1>1</h1>
+        </div>
+        <div class="player-color">
+            <div class="color-g"></div>
+            <h1>2</h1>
+        </div>
+        <div class="player-color">
+            <div class="color-b"></div>
+            <h1>3</h1>
+        </div>
+        <div class="player-color">
+            <div class="color-g"></div>
+            <h1>4</h1>
+        </div>
+
+        <button onclick="#">Begin het spel</button>
     </div>
 
     <!-- Naam invoeren -->
-    <div id="changeNameDiv">
+    <!-- <div id="changeNameDiv">
         <div id="changeGreen"><h2 id="greenHead">Player 1</h2>
+            <input type="text" name="fname">
+            <button id="butGreen">Edit name</button>
         </div>
         <div id="changeRed"><h2 id="redHead">Player 2</h2>
+            <input type="text" name="fname">
+            <button id="butRed">Edit name</button>
         </div>
         <div id="changeBlue"><h2 id="blueHead">Player 3</h2>
+            <input type="text" name="fname">
+            <button id="butBlue">Edit name</button>
         </div>
         <div id="changeYellow"><h2 id="yellowHead">Player 4</h2>
+            <input type="text" name="fname">
+            <button id="butYellow">Edit name</button>
         </div>
         <div>
             <button id="Volgende2" onclick="hide2()">Volgende</button>
         </div>
-    </div>
+    </div> -->
 
     <!-- Spelers incl. positie -->
     <div id="speldiv">
@@ -70,10 +103,10 @@
         <div id="yes-drop" class="drag-drop circle"></div>
 
         <!-- <div id="outer-dropzone" class="dropzone"> -->
-        <!-- #outer-dropzone -->
-        <div id="inner-dropzone" class="dropzone"></div>
+          <!-- #outer-dropzone -->
+          <div id="inner-dropzone" class="dropzone"></div>
         <!-- </div> -->
-    </section>
+    </section>   
 </div>
 
 
