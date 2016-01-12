@@ -151,27 +151,7 @@ function locForTest(){
     }
 };
 
-//========================================== CODE VOOR NOG EEN KEER ROLLEN =======================================
 
-//function secondRoll(){
-//    if(currentPlayer.positie === 6){
-//        var rollen2 = Math.floor(Math.random() * 6) + 1;
-//        if (rollen2 === 1){
-//            currentPlayer.positie += 1;
-//        }else if(rollen2 === 2){
-//            currentPlayer.positie += 2;
-//        }else if(rollen2 === 3){
-//            currentPlayer.positie += 3;
-//        }else if(rollen2 === 4){
-//            currentPlayer.positie += 4;
-//        }else if(rollen2 === 5){
-//            currentPlayer.positie += 5;
-//        }else if(rollen2 === 6){
-//            currentPlayer.positie += 6;
-//        }writePlayerPos();
-//    }else {console.log("geen dubbel roll")}
-//
-//};
 
 //==================================== ROLLEN MET DOBBELSTENEN EN POSITIE AANPASSEN =================================
 
@@ -220,6 +200,17 @@ function rolClick(){
     }else {};
     writePlayerPos();
     locForTest();
+    if(currentPlayer.positie === 6){
+        players[position--];
+    }else if(currentPlayer.positie === 26){
+        players[position--];
+    }else if(currentPlayer.positie === 53){
+        players[position--];
+    }else if(currentPlayer.positie === 42){
+        console.log("je stond op 42");
+        currentPlayer.positie = 39;
+        writePlayerPos();
+    }
     console.log(currentPlayer);
 };
 
