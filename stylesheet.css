@@ -322,42 +322,47 @@ input{
 
 /* player 1*/
 #p1div{
-    float:left;
-    background-color:green;
+    background-color:#f8ecc9;
+    width: 300px;
+    height:175px;
+    border-radius:4px;
+    margin:10px auto 10px auto;
 }
 #p1position{
-    float:left;
-    background-color:red;
+    display: inline;
 }
 /* player 2*/
 #p2div{
-    clear:both;
-    float:left;
-    background-color:green;
+    background-color:#f8ecc9;
+    width: 300px;
+    height:175px;
+    border-radius:4px;
+    margin:10px auto 10px auto;
 }
 #p2position{
-    float:left;
-    background-color:red;
+    display: inline;
 }
 /* player 3*/
 #p3div{
-    clear:both;
-    float:left;
-    background-color:green;
+    background-color:#f8ecc9;
+    width: 300px;
+    height:175px;
+    border-radius:4px;
+    margin:10px auto 10px auto;
 }
 #p3position{
-    float:left;
-    background-color:red;
+    display: inline;
 }
 /* player 4*/
 #p4div{
-    clear:both;
-    float:left;
-    background-color:green;
+    background-color:#f8ecc9;
+    width: 300px;
+    height:175px;
+    border-radius:4px;
+    margin:10px auto 10px auto;
 }
 #p4position{
-    float:left;
-    background-color:red;
+    display: inline;
 }
 /*Dit is de button voor de dobbelstenen*/
 #click{
