@@ -1,4 +1,16 @@
 //========================================  PLAYER FUNCTIONS EN VARS  =============================================
+
+function reloadAnimation(){
+    TweenMax.to("#terugbut", 0.3, {
+        ease:Back.easeIn,
+        scale:0.9,
+        onComplete: reloadPage,
+    })
+};
+function reloadPage(){
+    window.location.reload();
+};
+
 var playerNumber = ["P1", "P2", "P3", "P4"];
 
 function changePlayers(){
@@ -9,12 +21,12 @@ function twoPlayer(){
     if(playerNumber.length <= 0){
         playerNumber.push("Player 1", "Player 2");
         console.log(playerNumber);
-        changePlayers();
+        animation2player();
     }else{
         playerNumber.splice(0,4);
         playerNumber.push("Player 1", "Player 2");
         console.log(playerNumber);
-        changePlayers();
+        animation2player();
     }
 }
 
@@ -22,12 +34,12 @@ function threePlayer(){
     if(playerNumber.length <= 0){
         playerNumber.push("Player 1", "Player 2", "Player 3");
         console.log(playerNumber);
-        changePlayers();
+        animation3player();
     }else{
         playerNumber.splice(0,4);
         playerNumber.push("Player 1", "Player 2", "Player 3");
         console.log(playerNumber);
-        changePlayers();
+        animation3player();
     }
 }
 
@@ -35,60 +47,47 @@ function fourPlayer(){
     if(playerNumber.length <= 0){
         playerNumber.push("Player 1", "player 2", "player 3", "Player 4");
         console.log(playerNumber);
-        changePlayers()//========================================  PLAYER FUNCTIONS EN VARS  =============================================
-var playerNumber = ["P1", "P2", "P3", "P4"];
-
-function changePlayers(){
-    document.getElementById("innerText").innerHTML = playerNumber.length + " Players selected";
-}
-
-function twoPlayer(){
-    if(playerNumber.length <= 0){
-        playerNumber.push("Player 1", "Player 2");
-        console.log(playerNumber);
-        changePlayers();
-    }else{
-        playerNumber.splice(0,4);
-        playerNumber.push("Player 1", "Player 2");
-        console.log(playerNumber);
-        changePlayers();
-    }
-}
-
-function threePlayer(){
-    if(playerNumber.length <= 0){
-        playerNumber.push("Player 1", "Player 2", "Player 3");
-        console.log(playerNumber);
-        changePlayers();
-    }else{
-        playerNumber.splice(0,4);
-        playerNumber.push("Player 1", "Player 2", "Player 3");
-        console.log(playerNumber);
-        changePlayers();
-    }
-}
-
-function fourPlayer(){
-    if(playerNumber.length <= 0){
-        playerNumber.push("Player 1", "player 2", "player 3", "Player 4");
-        console.log(playerNumber);
-        changePlayers();
+        animation4player();
     }else{
         playerNumber.splice(0,4);
         playerNumber.push("Player 1", "Player 2", "player 3", "Player 4");
         console.log(playerNumber);
-        changePlayers();
+        animation4player();
     }
 }
 console.log(playerNumber.length);
 
 //====================================== CODE VOOR HET GAAN NAAR DE VOLGENDE SCHERMEN =================================
 
+function animation2player(){
+    TweenMax.to("#add1", 0.4, {
+        ease:Back.easeIn,
+        scale:0.8,
+        onComplete: hide1,
+    })
+};
+function animation3player(){
+    TweenMax.to("#add2", 0.4, {
+        ease:Back.easeIn,
+        scale:0.8,
+        onComplete: hide1,
+    })
+};
+function animation4player(){
+    TweenMax.to("#add3", 0.4, {
+        ease:Back.easeIn,
+        scale:0.8,
+        onComplete: hide1,
+    })
+};
+
+
 function hide1(){
+    writeNames();
     console.log("Volgende1");
     document.getElementById("scr-home").style.visibility = "hidden";
     document.getElementById("scr-intro").style.visibility = "visible";
-    writeNames();
+
 }
 
 function hide2(){
@@ -251,13 +250,6 @@ function rolClick(){
     console.log(currentPlayer);
 };
 
-    }else{
-        playerNumber.splice(0,4);
-        playerNumber.push("Player 1", "Player 2", "player 3", "Player 4");
-        console.log(playerNumber);
-        changePlayers();
-    }
-}
 console.log(playerNumber.length);
 
 function hide1(){
