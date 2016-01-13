@@ -55,7 +55,10 @@ function fourPlayer(){
         animation4player();
     }
 }
-console.log(playerNumber.length);
+
+function introPNum(){
+    document.getElementById("src-intro-pnum").innerHTML = playerNumber.length + " spelers gekozen";
+};
 
 //====================================== CODE VOOR HET GAAN NAAR DE VOLGENDE SCHERMEN =================================
 
@@ -84,6 +87,7 @@ function animation4player(){
 
 function hide1(){
     writeNames();
+    introPNum();
     console.log("Volgende1");
     document.getElementById("scr-home").style.visibility = "hidden";
     document.getElementById("scr-intro").style.visibility = "visible";

@@ -200,8 +200,8 @@ h1{
 
 .player-color {
     width: 150px;
-    height: 85px;
-    background-color: #DDD;
+    height: 100px;
+    background-color: #d9cfb0;
     border-radius: 6px;
     display: inline-block;
 }
@@ -210,15 +210,90 @@ h1{
     display: block;
 }
 
-/*~~~~~~~~~~~~~~~~~~~~~~END INTRO~~~~~~~~~~~~~~~~~~~~~~*/
+#terugbut{
+    background-color:#cccccc;
+    border-bottom: 3px solid #a2a3a2;
+    color:#535353;
+    font-weight: bolder;
+}
+.trap-payer-num{
+    margin-top:15px;
+    width:30px;
+    float:left;
+    text-align:center;
+}
 
-#speldiv {
-    visibility: hidden;
+.font-players{
+    font-size:4em;
+    font-family: 'GeorgiaPro-Semibold';
+}
+.color-g{
+    width: 80px;
+    height: 70px;
+    background-color:#004899;
+    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    border-radius:3px;
+    float:left;
+    margin: 15px 0 0 15px;
+}
+.color-r{
+    width: 80px;
+    height: 70px;
+    background-color:#d10000;
+    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    border-radius:3px;
+    float:left;
+    margin: 15px 0 0 15px;
+}
+.color-b{
+    width: 80px;
+    height: 70px;
+    background-color:#3aaa35;
+    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    border-radius:3px;
+    float:left;
+    margin: 15px 0 0 15px;
+}
+.color-y{
+    width: 80px;
+    height: 70px;
+    background-color:#e6ac27;
+    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    border-radius:3px;
+    float:left;
+    margin: 15px 0 0 15px;
+}
+#startKnop{
+    background-color: #ef693a;
+    border-bottom: 4px solid #c84627;
+    margin:20px auto 0 auto;
+    border-radius:4px;
+    height:80px;
+    width:460px;
+    color:#fff;
+    font-family: 'GeorgiaPro-Regular';
+    font-size:2.2em;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~END INTRO~~~~~~~~~~~~~~~~~~~~~~*/
+#src-spel-left{
     position: absolute;
     background-color: #4f9374;
     width:25%;
     height:100%;
-    padding: 4px;
+}
+#src-spel-right{
+    width:75%;
+    text-align:center;
+    float:right
+}
+
+#speldiv {
+    visibility: hidden;
+
 }
 
 #changeNameDiv{
@@ -286,8 +361,15 @@ input{
 }
 /*Dit is de button voor de dobbelstenen*/
 #click{
-    clear:both;
-    float:left;
+    background-color: #ef693a;
+    border-bottom: 4px solid #c84627;
+    margin:20px auto 0 auto;
+    border-radius:4px;
+    height:60px;
+    width:400px;
+    color:#fff;
+    font-family: 'GeorgiaPro-Regular';
+    font-size:1.8em;
 }
 
 

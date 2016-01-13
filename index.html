@@ -36,35 +36,39 @@
             <img class="logo" src="img/logo.png" alt="Ken je app logo">
         </div>
 
-        <h3><span>3 spelers gekozen</span><br>Zorg ervoor dat de juiste pionen bij de hand heeft voordat jullie het spel beginnen</h3>
+        <h3><span id="src-intro-pnum">3 spelers gekozen</span><br>Zorg ervoor dat de juiste pionen bij de hand heeft voordat jullie het spel beginnen</h3>
 
         <div id="changeGreen" class="player-color">
-            <div class="color-r"></div>
-            <h1>1</h1>
+            <div class="color-g"></div>
+            <div class="trap-payer-num"><span class="font-players">1</span></h1></div>
         </div>
         <div id="changeRed" class="player-color">
-            <div class="color-g"></div>
-            <h1>2</h1>
+            <div class="color-r"></div>
+            <div class="trap-payer-num"><span class="font-players">2</span></h1></div>
         </div>
         <div id="changeBlue" class="player-color">
             <div class="color-b"></div>
-            <h1>3</h1>
+            <div class="trap-payer-num"><span class="font-players">3</span></h1></div>
         </div>
         <div id="changeYellow" class="player-color">
-            <div class="color-g"></div>
-            <h1>4</h1>
+            <div class="color-y"></div>
+            <div class="trap-payer-num"><span class="font-players">4</span></h1></div>
         </div>
 
-        <button onclick="hide2()">Begin het spel</button>
+        <button id="startKnop" onclick="hide2()">Begin het spel</button>
     </div>
 
     <!-- Spelers incl. positie -->
     <div id="speldiv">
-        <div id="p1div">Player <strong>1</strong> positie:</div><div id="p1position">0</div>
-        <div id="p2div">Player <strong>2</strong> positie:</div><div id="p2position">0</div>
-        <div id="p3div">Player <strong>3</strong> positie:</div><div id="p3position">0</div>
-        <div id="p4div">Player <strong>4</strong> positie:</div><div id="p4position">0</div>
+        <div id="src-spel-left">
+            <div id="p1div">Player <strong>1</strong> positie:</div><div id="p1position">0</div>
+            <div id="p2div">Player <strong>2</strong> positie:</div><div id="p2position">0</div>
+            <div id="p3div">Player <strong>3</strong> positie:</div><div id="p3position">0</div>
+            <div id="p4div">Player <strong>4</strong> positie:</div><div id="p4position">0</div>
+        </div>
+        <div id="src-spel-right">
         <button id="click" onclick="rolClick()">Roll The Dice</button>
+        </div>
     </div>
 </div>
 
