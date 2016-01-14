@@ -105,17 +105,11 @@ function hide2(){
         players.splice(2,2);
         document.getElementById("p3div").remove();
         document.getElementById("p4div").remove();
-        document.getElementById("p3position").remove();
-        document.getElementById("p4position").remove();
-        console.log("De lengte hiervan is " + playerNumber.length);
     }else if(playerNumber.length == 3){
         document.getElementById("spelpijl4").remove();
         players.splice(3,1);
         document.getElementById("p4div").remove();
-        document.getElementById("p4position").remove();
-        console.log("De lengte hiervan is " + playerNumber.length);
     }else if(playerNumber.length == 4){
-        console.log("De lengte hiervan is " + playerNumber.length);
     };
     console.log(players);
 }
@@ -145,19 +139,19 @@ function writeNames(){
 
 var players = [
     {
-        name: "Player 1",
+        name: "Speler 1",
         positie: 0
     },
     {
-        name: "Player 2",
+        name: "Speler 2",
         positie: 0
     },
     {
-        name: "Player 3",
+        name: "Speler 3",
         positie: 0
     },
     {
-        name: "Player 4",
+        name: "Speler 4",
         positie: 0
     }
 ];
@@ -198,6 +192,20 @@ function locForTest(){
 
 //==================================== ROLLEN MET DOBBELSTENEN EN POSITIE AANPASSEN =================================
 
+
+//function arrows3(){
+//    if(position === 0){
+//        document.getElementById("scr-home").style.visibility = "hidden";
+//        document.getElementById("scr-intro").style.visibility = "visible";
+//    }
+//};
+//function arrows4(){
+//    if(position === 0){
+//        document.getElementById("scr-home").style.visibility = "hidden";
+//        document.getElementById("scr-intro").style.visibility = "visible";
+//    }
+//};
+
 var position = 0;
 var currentPlayer = players[position];
 //var value = document.getElementById("font-player1")
@@ -207,7 +215,6 @@ function writePlayerPos(){
         document.getElementById("p1position").innerHTML = players[0].positie;
     }else if(players.length === 2){
         document.getElementById("p1position").innerHTML = players[0].positie;
-        //value;
         document.getElementById("p2position").innerHTML = players[1].positie;
     }else if(players.length === 3){
         document.getElementById("p1position").innerHTML = players[0].positie;
@@ -222,40 +229,57 @@ function writePlayerPos(){
 };
 
 function rolClick(){
-
+    document.getElementById("nogeenkeer").style.visibility = "hidden";
     if (position >= players.length){
         position = 0;
-        //currentPlayer = players[position];
-    }
+    };
     currentPlayer = players[position++];
-
+    if(position == 0){
+        console.log("Pijl 1 wordt getoont")
+    }else if(position == 1){
+        console.log("Pijl 2 wordt getoont")
+    }else if(position == 2){
+        console.log("Pijl 3 wordt getoont")
+    }else if(position == 3){
+        console.log("Pijl 4 wordt getoont")
+    };
     var rollen = Math.floor(Math.random() * 6) + 1;
     if (rollen === 1){
         currentPlayer.positie += 1;
+        document.getElementById("rolloutcome").innerHTML = currentPlayer.name + " heeft 1 gegooid!";
     }else if(rollen === 2){
         currentPlayer.positie += 2;
+        document.getElementById("rolloutcome").innerHTML = currentPlayer.name + " heeft 2 gegooid!";
     }else if(rollen === 3){
         currentPlayer.positie += 3;
+        document.getElementById("rolloutcome").innerHTML = currentPlayer.name + " heeft 3 gegooid!";
     }else if(rollen === 4){
         currentPlayer.positie += 4;
+        document.getElementById("rolloutcome").innerHTML = currentPlayer.name + " heeft 4 gegooid!";
     }else if(rollen === 5){
         currentPlayer.positie += 5;
+        document.getElementById("rolloutcome").innerHTML = currentPlayer.name + " heeft 5 gegooid!";
     }else if(rollen === 6){
         currentPlayer.positie += 6;
+        document.getElementById("rolloutcome").innerHTML = currentPlayer.name + " heeft 6 gegooid!";
     }else {};
     writePlayerPos();
     locForTest();
     if(currentPlayer.positie === 6){
         players[position--];
+        document.getElementById("nogeenkeer").style.visibility = "visible";
     }else if(currentPlayer.positie === 26){
         players[position--];
+        document.getElementById("nogeenkeer").style.visibility = "visible";
     }else if(currentPlayer.positie === 53){
         players[position--];
+        document.getElementById("nogeenkeer").style.visibility = "visible";
     }else if(currentPlayer.positie === 42){
         console.log("je stond op 42");
         setTimeout(function(){currentPlayer.positie = 39;}, 3000);
         writePlayerPos();
     }
+
     console.log(currentPlayer);
 };
 

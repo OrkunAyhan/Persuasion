@@ -325,14 +325,27 @@ input{
 #spelpijl2{
     position:absolute;
     margin-top:320px;
+    visibility: hidden;
 }
 #spelpijl3{
     position:absolute;
     margin-top:510px;
+    visibility:hidden;
 }
 #spelpijl4{
     position:absolute;
     margin-top:620px;
+    visibility:hidden;
+}
+
+#rolloutcomediv{
+    min-height:100px;
+    padding:20px;
+    font-size:40px;
+    font-family:GeorgiaPro-Regular;
+}
+#nogeenkeer{
+    visibility:hidden;
 }
 
 
