@@ -61,20 +61,35 @@
     <!-- Spelers incl. positie -->
     <div id="speldiv">
         <div id="src-spel-left">
+        <div id="scr-spel-buttons"><button id="stopspel" onclick="reloadAnimation()">Stop spel</button><button id="help">Help</button></div>
             <div id="p1div">
-                <div id="shapeP1"></div><span class="playerIdHighlight">Player 1</span><br/> positie:<div id="p1position"><span id="font-player1">0</span></div>
+                <div id="shapeP1"></div>
+                <div class="playerIdHighlight">Player 1</div><br/>
+                positie: <div id="p1position">
+                    <span id="font-player1">0</span>
+                        </div>
             </div>
             <div id="p2div">
-                Player <strong>2</strong> positie:<div id="p2position">0</div>
+                <div id="shapeP2"></div>
+                <div class="playerIdHighlight">Player 2</div><br/>
+                positie:<div id="p2position">0</div>
             </div>
             <div id="p3div">
-                Player <strong>3</strong> positie:<div id="p3position">0</div>
+                <div id="shapeP3"></div>
+                <div class="playerIdHighlight">Player 3</div><br/>
+                positie:<div id="p3position">0</div>
             </div>
             <div id="p4div">
-                Player <strong>4</strong> positie:<div id="p4position">0</div>
+                <div id="shapeP4"></div>
+                <div class="playerIdHighlight">Player 4</div><br/>
+                positie:<div id="p4position">0</div>
             </div>
         </div>
         <div id="src-spel-right">
+            <div id="spelpijl1"><img src="img/pijl.png"></div>
+            <div id="spelpijl2"><img src="img/pijl.png"></div>
+            <div id="spelpijl3"><img src="img/pijl.png"></div>
+            <div id="spelpijl4"><img src="img/pijl.png"></div>
         <button id="click" onclick="rolClick()">Rol de dobbelstenen</button>
         </div>
     </div>

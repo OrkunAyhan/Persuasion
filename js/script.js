@@ -100,6 +100,8 @@ function hide2(){
     document.getElementById("speldiv").style.visibility = "visible";
     if(playerNumber.length == 2){
         // REMOVE PLAYER 3 & 4 FROM GAME
+        document.getElementById("spelpijl3").remove();
+        document.getElementById("spelpijl4").remove();
         players.splice(2,2);
         document.getElementById("p3div").remove();
         document.getElementById("p4div").remove();
@@ -107,6 +109,7 @@ function hide2(){
         document.getElementById("p4position").remove();
         console.log("De lengte hiervan is " + playerNumber.length);
     }else if(playerNumber.length == 3){
+        document.getElementById("spelpijl4").remove();
         players.splice(3,1);
         document.getElementById("p4div").remove();
         document.getElementById("p4position").remove();

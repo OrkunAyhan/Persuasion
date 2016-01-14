@@ -317,6 +317,24 @@ h1{
 input{
     margin:10px 0 10px 0;
 }
+/*=========================================== SPELER PIJLEN ===============================================*/
+#spelpijl1{
+    position:absolute;
+    margin-top:130px;
+}
+#spelpijl2{
+    position:absolute;
+    margin-top:320px;
+}
+#spelpijl3{
+    position:absolute;
+    margin-top:510px;
+}
+#spelpijl4{
+    position:absolute;
+    margin-top:620px;
+}
+
 
 /* Het positioneren van de speler en daarnaast zijn positie*/
 
@@ -383,12 +401,39 @@ input{
 }
 /* De shapes van de trapezoids & spelers tijdens het spelen zelf */
 .playerIdHighlight{
+    font-size:30px;
+    font-family: 'GeorgiaPro-Semibold';
+    padding-top:20px;
+}
 
+#help{
+    margin:10px;
+    background-color:#cccccc;
+    border-bottom: 3px solid #a2a3a2;
+    color:#535353;
+    font-size:1.0em;
+    font-weight: bolder;
+    width:120px;
+    height:40px;
+    font-family:'GeorgiaPro-Regular';
+    border-radius:4px;
+}
+#stopspel{
+    margin:10px;
+    background-color:#cccccc;
+    border-bottom: 3px solid #a2a3a2;
+    color:#535353;
+    font-size:1.0em;
+    font-weight: bolder;
+    width:120px;
+    height:40px;
+    font-family:'GeorgiaPro-Regular';
+    border-radius:4px;
 }
 
 #shapeP1{
-    width: 80px;
-    height: 70px;
+    width: 45%;
+    height: 85%;
     background-color:#004899;
     -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
     clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
@@ -397,6 +442,36 @@ input{
     margin: 15px 0 0 15px;
 }
 
+#shapeP2{
+    width: 45%;
+    height: 85%;
+    background-color:#d10000;
+    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    border-radius:3px;
+    float:left;
+    margin: 15px 0 0 15px;
+}
+#shapeP3{
+    width: 45%;
+    height: 85%;
+    background-color:#3AAA35;
+    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    border-radius:3px;
+    float:left;
+    margin: 15px 0 0 15px;
+}
+#shapeP4{
+    width: 45%;
+    height: 85%;
+    background-color:#E6AC27;
+    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    border-radius:3px;
+    float:left;
+    margin: 15px 0 0 15px;
+}
 
 
 /*Dit is de button voor de dobbelstenen*/
