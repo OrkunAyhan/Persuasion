@@ -330,6 +330,23 @@ input{
 }
 #p1position{
     display: inline;
+    font-size: 70px;
+    font-family: 'GeorgiaPro-Semibold';
+}
+#p2position{
+    display: inline;
+    font-size: 70px;
+    font-family: 'GeorgiaPro-Semibold';
+}
+#p3position{
+    display: inline;
+    font-size: 70px;
+    font-family: 'GeorgiaPro-Semibold';
+}
+#p4position{
+    display: inline;
+    font-size: 70px;
+    font-family: 'GeorgiaPro-Semibold';
 }
 /* player 2*/
 #p2div{
@@ -364,6 +381,24 @@ input{
 #p4position{
     display: inline;
 }
+/* De shapes van de trapezoids & spelers tijdens het spelen zelf */
+.playerIdHighlight{
+
+}
+
+#shapeP1{
+    width: 80px;
+    height: 70px;
+    background-color:#004899;
+    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
+    border-radius:3px;
+    float:left;
+    margin: 15px 0 0 15px;
+}
+
+
+
 /*Dit is de button voor de dobbelstenen*/
 #click{
     background-color: #ef693a;
