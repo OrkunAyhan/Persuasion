@@ -283,6 +283,18 @@ function rolClick(){
     console.log(currentPlayer);
 };
 
+// ==========================================
+// =================ANIMATIES================
+// ==========================================
+var pijlen = document.querySelectorAll("#spelpijl1, #spelpijl2, #spelpijl3, #spelpijl4");
+var tlPijlen = new TimelineMax
+
+function spelerPijl() {
+    tlPijlen.to(pijlen, 1, {repeat: -1, yoyo:true, ease: Power1.easeInOut, x: 10})
+};
+
+spelerPijl();
+
 // ===================================== DUBBEL GEKOPIEËRD ==================================================
 
 //console.log(playerNumber.length);
@@ -467,42 +479,3 @@ interact('.drag-drop')
   .restrict({
     drag: 'parent'
   });
-
-
-// ==========================================
-// ===============DRAG 'N DROP===============
-// ===============w/o COMMENTS===============
-// ==========================================
-
-// interact('.dropzone').dropzone(true).accept('#yes-drop')
-//     .on('dragenter', function(event) {
-//         var draggableElement = event.relatedTarget,
-//         dropzoneElement = event.target;
-//         dropzoneElement.classList.add('drop-target');
-//         draggableElement.classList.add('can-drop');
-//         draggableElement.textContent = 'Dragged in';
-//     })
-//     .on('dragleave', function(event) {
-//         event.target.classList.remove('drop-target');
-//         event.relatedTarget.classList.remove('can-drop');
-//         event.relatedTarget.textContent = 'Dragged out';
-//     })
-//     .on('drop', function(event) {
-//         event.relatedTarget.textContent = 'Dropped';
-//     });
-
-// interact('.drag-drop').draggable({
-//     onmove: function(event) {
-//         var target = event.target;
-
-//         target.x = (target.x | 0) + event.dx;
-//         target.y = (target.y | 0) + event.dy;
-
-//         target.style.webkitTransform = target.style.transform =
-//             'translate(' + target.x + 'px, ' + target.y + 'px)';
-//     }
-//   })
-
-// .inertia(true).restrict({
-//     drag: 'parent'
-// });

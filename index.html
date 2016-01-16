@@ -36,23 +36,30 @@
             <img class="logo" src="img/logo.png" alt="Ken je app logo">
         </div>
 
-        <h3><span id="src-intro-pnum">3 spelers gekozen</span><br>Zorg ervoor dat de juiste pionen bij de hand heeft voordat jullie het spel beginnen</h3>
+        <h3><span id="src-intro-pnum">3 spelers gekozen</span><br>Zorg ervoor dat jullie de juiste pionen bij de hand hebben voordat jullie het spel beginnen.</h3>
+        <h3>U kunt de iPad in het midden van het bord 
+        leggen waar het Ken Je App logo staat.</h3>
+
 
         <div id="changeGreen" class="player-color">
-            <div class="color-g"></div>
-            <div class="trap-payer-num"><span class="font-players">1</span></h1></div>
+            <img src="img/player_1.png" alt="Speler 1">
+            <!-- <div class="color-g"></div>
+            <div class="trap-payer-num"><span class="font-players">1</span></h1></div> -->
         </div>
         <div id="changeRed" class="player-color">
-            <div class="color-r"></div>
-            <div class="trap-payer-num"><span class="font-players">2</span></h1></div>
+            <img src="img/player_2.png" alt="Speler 2">
+            <!-- <div class="color-r"></div>
+            <div class="trap-payer-num"><span class="font-players">2</span></h1></div> -->
         </div>
         <div id="changeBlue" class="player-color">
-            <div class="color-b"></div>
-            <div class="trap-payer-num"><span class="font-players">3</span></h1></div>
+            <img src="img/player_3.png" alt="Speler 3">
+            <!-- <div class="color-b"></div>
+            <div class="trap-payer-num"><span class="font-players">3</span></h1></div> -->
         </div>
         <div id="changeYellow" class="player-color">
-            <div class="color-y"></div>
-            <div class="trap-payer-num"><span class="font-players">4</span></h1></div>
+            <img src="img/player_4.png" alt="Speler 4">
+            <!-- <div class="color-y"></div>
+            <div class="trap-payer-num"><span class="font-players">4</span></h1></div> -->
         </div>
 
         <button id="startKnop" onclick="hide2()">Begin het spel</button>
@@ -61,56 +68,79 @@
     <!-- Spelers incl. positie -->
     <div id="speldiv">
         <div id="src-spel-left">
-        <div id="scr-spel-buttons"><button id="stopspel" onclick="reloadAnimation()">Stop spel</button><button id="help">Help</button></div>
+            <div id="scr-spel-buttons">
+                <button id="stopspel" onclick="reloadAnimation()">Spel stoppen</button>
+                <button id="help">Help</button>
+            </div>
             <div id="p1div">
-                <div id="shapeP1"></div>
-                <div class="playerIdHighlight">Player 1</div><br/>
-                positie: <div id="p1position">
-                    <span id="font-player1">0</span>
-                        </div>
+                <div id="shapeP1">
+                    <img src="img/speler_1.png" alt="Speler 1, blauw">
+                    <div id="p1position">0</div>
+                </div>
             </div>
             <div id="p2div">
-                <div id="shapeP2"></div>
-                <div class="playerIdHighlight">Player 2</div><br/>
-                positie:<div id="p2position">0</div>
+                <div id="shapeP2">
+                    <img src="img/speler_2.png" alt="Speler 2, rood">
+                    <div id="p2position">0</div>
+                </div>
             </div>
             <div id="p3div">
-                <div id="shapeP3"></div>
-                <div class="playerIdHighlight">Player 3</div><br/>
-                positie:<div id="p3position">0</div>
+                <div id="shapeP3">
+                    <img src="img/speler_3.png" alt="Speler 3, groen">
+                    <div id="p3position">0</div>
+                </div>
             </div>
             <div id="p4div">
-                <div id="shapeP4"></div>
-                <div class="playerIdHighlight">Player 4</div><br/>
-                positie:<div id="p4position">0</div>
+                <div id="shapeP4">
+                    <img src="img/speler_4.png" alt="Speler 4, geel">
+                    <div id="p4position">0</div>
+                </div>
             </div>
         </div>
         <div id="src-spel-right">
-            <div id="spelpijl1"><img src="img/pijl.png"></div>
-            <div id="spelpijl2"><img src="img/pijl.png"></div>
-            <div id="spelpijl3"><img src="img/pijl.png"></div>
-            <div id="spelpijl4"><img src="img/pijl.png"></div>
-            <div id="rolloutcomediv"><span id="rolloutcome"></span><br/><span id="nogeenkeer">U mag nog een keer gooien</span></div>
-        <button id="click" onclick="rolClick()">Rol de dobbelstenen</button>
+            <div id="spelpijl1"><!-- <img src="img/pijl.png"> --></div>
+            <div id="spelpijl2"><!-- <img src="img/pijl.png"> --></div>
+            <div id="spelpijl3"><!-- <img src="img/pijl.png"> --></div>
+            <div id="spelpijl4"><!-- <img src="img/pijl.png"> --></div>
+            
+            <div id="rolloutcomediv"><span id="rolloutcome"></span><br/>
+                <div id="dice-feedback">
+                    <h2 id="nogeenkeer">U mag nog een keer gooien</h2>
+                    <!-- Feedback voor de unieke plaatsen -->
+                    <h2 id="f-terug">U bent verward geraakt door alle applicaties<br>Ga terug naar 39</h2>
+                    <h2 id="f-1beurt">Uw batterij is bijna leeg<br>U moet 1 beurt overslaan</h2>
+                    <h2 id="f-3beurten">Uw batterij is leeg<br>U moet 3 beurten overslaan</h2>
+                    <h2 id="f-opnieuw">Oh nee, u heeft uw iPad laten vallen<br>U moet helemaal terug naar Start</h2>
+                    <h2 id="f-gewonnen">Gefeliciteerd<br>U heeft gewonnen</h2>
+                </div>
+                <div id="dobbelsteen">
+                    <img src="img/beker.png" alt="Dobbelsteen beker">
+                    <button id="click" onclick="rolClick()">Rol de dobbelstenen</button>
+                </div>
+            </div>
+
+            <!-- Opdracht 1 -->
+            <div id="scr-task-1">
+                <section>
+                    <div id="yes-drop" class="drag-drop">
+                        <div class="arrow"></div>
+                    </div>
+                    <!-- <div id="no-drop" class="drag-drop square"></div>
+                    <div id="no-drop" class="drag-drop square shape-outline"></div>
+                    <div id="no-drop" class="drag-drop circle shape-outline"></div>
+
+                    <div id="yes-drop" class="drag-drop circle"></div>
+                    <div id="yes-drop" class="drag-drop circle"></div> -->
+
+                    <!-- <div id="outer-dropzone" class="dropzone"> -->
+                      <!-- #outer-dropzone -->
+                    <div id="inner-dropzone" class="dropzone"></div>
+                    <!-- </div> -->
+                </section>   
+                <img src="img/task1.png" alt="opdracht">
+            </div>
         </div>
     </div>
-</div>
-
-<!-- Opdracht 1 -->
-<div id="scr-task-1">
-    <section>
-        <div id="no-drop" class="drag-drop square"></div>
-        <div id="no-drop" class="drag-drop square shape-outline"></div>
-        <div id="no-drop" class="drag-drop circle shape-outline"></div>
-
-        <div id="yes-drop" class="drag-drop circle"></div>
-        <div id="yes-drop" class="drag-drop circle"></div>
-
-        <!-- <div id="outer-dropzone" class="dropzone"> -->
-          <!-- #outer-dropzone -->
-          <div id="inner-dropzone" class="dropzone"></div>
-        <!-- </div> -->
-    </section>   
 </div>
 
 

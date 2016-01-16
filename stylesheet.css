@@ -12,6 +12,8 @@ body {
     width: 100%;
     height: 100%;
     margin:0;
+    padding: 0;
+    overflow: hidden;
 }
 
 @font-face {
@@ -191,20 +193,32 @@ h1{
     color: #000;
     font-size: 1.5em;
     font-family: 'GeorgiaPro-Light';
-    padding-top: 85px;
+    padding-top: 1em;
+    margin: 0 auto;
+    width: 24em;
 }
 
-#scr-intro h3 span {
-    font-family: 'GeorgiaPro-Regular';
-}
+    #scr-intro h3 span {
+        font-family: 'GeorgiaPro-Regular';
+    }
+
+    #scr-intro h3:nth-of-type(2) {
+        padding-bottom: 1.3em
+    }
 
 .player-color {
-    width: 150px;
+    /*width: 150px;
     height: 100px;
     background-color: #d9cfb0;
-    border-radius: 6px;
+    border-radius: 6px;*/
     display: inline-block;
 }
+
+    .player-color img {
+        width: 154px;
+        height: auto;
+        padding: 0 10px 0 10px;
+    }
 
 #scr-intro > button {
     display: block;
@@ -269,24 +283,24 @@ h1{
 }
 #startKnop{
     background-color: #ef693a;
-    border-bottom: 4px solid #c84627;
-    margin:20px auto 0 auto;
-    border-radius:4px;
-    height:80px;
-    width:460px;
-    color:#fff;
+    border-bottom: 5px solid #c84627;
+    margin: 20px auto 0 auto;
+    border-radius: 6px;
+    height: 80px;
+    width: 420px;
+    color: #fff;
     font-family: 'GeorgiaPro-Regular';
-    font-size:2.2em;
+    font-size: 2.2em;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~END INTRO~~~~~~~~~~~~~~~~~~~~~~*/
 #src-spel-left{
     position: absolute;
     background-color: #4f9374;
-    width:25%;
-    height:100%;
+    width: 300px;
+    height: 100%;
 }
 #src-spel-right{
-    width:75%;
+    width: 724px;
     text-align:center;
     float:right
 }
@@ -318,210 +332,232 @@ input{
     margin:10px 0 10px 0;
 }
 /*=========================================== SPELER PIJLEN ===============================================*/
+#src-spel-right #spelpijl1,
+#src-spel-right #spelpijl2,
+#src-spel-right #spelpijl3,
+#src-spel-right #spelpijl4 {
+    width: 30px;
+    height: 35px;
+    left: 295px;
+    background-color: #4f9374;
+    -webkit-clip-path: polygon(30% 50%, 100% 100%, 100% 0);
+    clip-path: polygon(30% 50%, 100% 100%, 100% 0);
+}
+
 #spelpijl1{
-    position:absolute;
-    margin-top:130px;
+    position: absolute;
+    top: 170px;
 }
 #spelpijl2{
-    position:absolute;
-    margin-top:320px;
+    position: absolute;
+    top: 337px;
     visibility: hidden;
 }
 #spelpijl3{
-    position:absolute;
-    margin-top:510px;
-    visibility:hidden;
+    position: absolute;
+    top: 497px;
+    visibility: hidden;
 }
 #spelpijl4{
-    position:absolute;
-    margin-top:620px;
-    visibility:hidden;
+    position: absolute;
+    top: 664px;
+    visibility: hidden;
 }
 
 #rolloutcomediv{
-    min-height:100px;
-    padding:20px;
-    font-size:40px;
-    font-family:GeorgiaPro-Regular;
+    min-height: 100px;
+    padding: 20px;
+    font-size: 40px;
+    font-family: 'GeorgiaPro-Regular';
 }
+
+/* Dobbelsteen feedback */
+#dice-feedback {
+    position: absolute;
+    width: 520px;
+    bottom: 130px;}
+
+#dice-feedback h2 {
+    position: relative;
+    font-size: 30px;
+    font-family: 'GeorgiaPro-Light';
+    text-align: center;
+    left: 83px;
+    margin: 0;
+}
+
 #nogeenkeer{
     visibility:hidden;
+    top: 350px;
 }
 
+#f-terug {
+    visibility: hidden;
+    top: 280px;
+}
 
-/* Het positioneren van de speler en daarnaast zijn positie*/
+#f-1beurt {
+    visibility: hidden;
+    top: 210px;
+}
+
+#f-3beurten {
+    visibility: hidden;
+    top: 140px;
+}
+
+#f-opnieuw {
+    visibility: hidden;
+    top: 70px;
+}
+
+#f-gewonnen {
+    visibility: hidden;
+}
+
+/* END Dobbelsteen feedback */
+
+/* Dobbelsteen & beker */
+#dobbelsteen {
+    display: block;
+    width: 400px;
+    height: 460px;
+    margin: 60px auto 0 auto;
+}
+
+    #dobbelsteen img {
+        width: 225px;
+        height: auto;
+        position: relative;
+        top: 100px;
+    }
+
+/*Dit is de button voor de dobbelstenen*/
+    #click{
+        background-color: #ef693a;
+        border-bottom: 4px solid #c84627;
+        margin: 20px auto 0 auto;
+        border-radius: 6px;
+        height: 75px;
+        width: 360px;
+        color: #fff;
+        font-family: 'GeorgiaPro-Regular';
+        font-size: 30px;
+        position: relative;
+    }
 
 /* player 1*/
-#p1div{
-    background-color:#f8ecc9;
-    width: 300px;
-    height:175px;
-    border-radius:4px;
-    margin:10px auto 10px auto;
-}
-#p1position{
-    display: inline;
-    font-size: 70px;
-    font-family: 'GeorgiaPro-Semibold';
-}
-#p2position{
-    display: inline;
-    font-size: 70px;
-    font-family: 'GeorgiaPro-Semibold';
-}
-#p3position{
-    display: inline;
-    font-size: 70px;
-    font-family: 'GeorgiaPro-Semibold';
-}
-#p4position{
-    display: inline;
-    font-size: 70px;
-    font-family: 'GeorgiaPro-Semibold';
-}
-/* player 2*/
-#p2div{
-    background-color:#f8ecc9;
-    width: 300px;
-    height:175px;
-    border-radius:4px;
-    margin:10px auto 10px auto;
-}
-#p2position{
-    display: inline;
-}
-/* player 3*/
-#p3div{
-    background-color:#f8ecc9;
-    width: 300px;
-    height:175px;
-    border-radius:4px;
-    margin:10px auto 10px auto;
-}
-#p3position{
-    display: inline;
-}
-/* player 4*/
-#p4div{
-    background-color:#f8ecc9;
-    width: 300px;
-    height:175px;
-    border-radius:4px;
-    margin:10px auto 10px auto;
-}
-#p4position{
-    display: inline;
-}
-/* De shapes van de trapezoids & spelers tijdens het spelen zelf */
-.playerIdHighlight{
-    font-size:30px;
-    font-family: 'GeorgiaPro-Semibold';
-    padding-top:20px;
+#p1div,
+#p2div,
+#p3div,
+#p4div {
+    padding-bottom: 10px;
 }
 
-#help{
-    margin:10px;
-    background-color:#cccccc;
-    border-bottom: 3px solid #a2a3a2;
-    color:#535353;
-    font-size:1.0em;
-    font-weight: bolder;
-    width:120px;
-    height:40px;
-    font-family:'GeorgiaPro-Regular';
-    border-radius:4px;
+#p1div {
+    margin-top: 10px;
 }
-#stopspel{
-    margin:10px;
-    background-color:#cccccc;
+
+#p1position,
+#p2position,
+#p3position,
+#p4position {
+    position: relative;
+    /*display: inline;*/
+    text-align: center;
+    color: #FFF;
+    margin-bottom: -85px;
+    font-size: 70px;
+    font-family: 'GeorgiaPro-Regular';
+}
+
+#p1position {
+    top: -120px;
+    left: 73px;
+}
+#p2position {
+    top: -120px;
+    left: 73px;
+}
+#p3position {
+    top: -120px;
+    left: 73px;
+}
+#p4position {
+    top: -120px;
+    left: 73px;
+}
+
+/* Spelscherm knoppen */
+#scr-spel-buttons button {
+    background-color: #cccccc;
     border-bottom: 3px solid #a2a3a2;
-    color:#535353;
-    font-size:1.0em;
+    color: #535353;
+    font-size: 1.2em;
     font-weight: bolder;
-    width:120px;
-    height:40px;
-    font-family:'GeorgiaPro-Regular';
-    border-radius:4px;
+    width: 70%;
+    height: 40px;
+    font-family: 'GeorgiaPro-Regular';
+    border-radius: 6px;
+    margin: 10px 0 0 0;
+    /*display: block;*/
+}
+
+#src-spel-left img {
+    width: 300px;
+    height: auto;
 }
 
 #shapeP1{
-    width: 45%;
-    height: 85%;
-    background-color:#004899;
-    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
-    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
-    border-radius:3px;
-    float:left;
-    margin: 15px 0 0 15px;
+
 }
 
 #shapeP2{
-    width: 45%;
-    height: 85%;
-    background-color:#d10000;
-    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
-    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
-    border-radius:3px;
-    float:left;
-    margin: 15px 0 0 15px;
+
 }
 #shapeP3{
-    width: 45%;
-    height: 85%;
-    background-color:#3AAA35;
-    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
-    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
-    border-radius:3px;
-    float:left;
-    margin: 15px 0 0 15px;
+
 }
 #shapeP4{
-    width: 45%;
-    height: 85%;
-    background-color:#E6AC27;
-    -webkit-clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
-    clip-path: polygon(0 0, 80% 0%, 55% 100%, 0 100%);
-    border-radius:3px;
-    float:left;
-    margin: 15px 0 0 15px;
+
 }
-
-
-/*Dit is de button voor de dobbelstenen*/
-#click{
-    background-color: #ef693a;
-    border-bottom: 4px solid #c84627;
-    margin:20px auto 0 auto;
-    border-radius:4px;
-    height:60px;
-    width:400px;
-    color:#fff;
-    font-family: 'GeorgiaPro-Regular';
-    font-size:1.8em;
-}
-
 
 
 /*====================================*/
 /*===============TASK 1===============*/
 #scr-task-1 {
-    width: 100%;
-    height: 100%;
+    width: 724px;
+    height: 470px;
     position: absolute;
-    z-index: 999;
-    right: 0;
+    float: right;
+    z-index: 900;
     bottom: 0;
-    display: none;
+    /*background-color: #C6BDA1;*/
+    box-sizing: border-box;
+/*    border: 15px solid #F8ECC9;*/
+    /*display: none;*/
+
 }
 
-#scr-task-1 section {
-    position: inherit;
-    border: 3px solid black;
-    right: 0;
-    bottom: 0;
-    width: 800px;
-    height: 500px;
-}
+    #scr-task-1 section {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+    }
+
+        #scr-task-1 section > div:nth-of-type(1) {
+            width: 60px;
+            height: 60px;
+            border: none;
+        }
+
+    #scr-task-1 img {
+        width: 100%;
+        height: 100%;
+    }
 
 .square {
     width: 100px;
@@ -536,6 +572,15 @@ input{
     background-color: #4f9374;
 }
 
+.arrow {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    background-color: #FFF;
+    -webkit-clip-path: polygon(65% 0, 100% 50%, 65% 100%, 45% 100%, 80% 50%, 45% 0);
+    clip-path: polygon(65% 0, 100% 50%, 65% 100%, 45% 100%, 80% 50%, 45% 0);
+}
+
 /*Interact.js*/
 #outer-dropzone {
     height: 140px;
@@ -546,19 +591,18 @@ input{
 }*/
 
 .dropzone {
-    background-color: #ef693a;
-    /*border: dashed 4px #666;
-    border-radius: 4px;
-    margin: 10px auto 30px;
-    padding: 10px;*/
-    width: 50%;
-    height: 100%;
-    float: right;
+    background-color: rgba(138,201,117,0.5);
+    width: 60px;
+    height: 100px;
+    position: absolute;
+    right: 225px;
+    bottom: 105px;
+    z-index: 100;
     transition: background-color 0.3s;
 }
 
 .drop-target {
-    background-color: #29e;
+    background-color: #8AC975;
 }
 
 .drag-drop {
@@ -581,6 +625,11 @@ input{
 }
 
     .drag-drop:nth-of-type(1) {
+        top: 281px;
+        left: 198px;
+    }
+
+    /*.drag-drop:nth-of-type(1) {
         top: 40px;
         left: 215px;
     }
@@ -599,7 +648,7 @@ input{
     .drag-drop:nth-of-type(5) {
         top: 300px;
         left: 240px;
-    }
+    }*/
 
 .shape-outline {
     background-color: #FFFFFF;
