@@ -336,6 +336,7 @@ input{
 #src-spel-right #spelpijl2,
 #src-spel-right #spelpijl3,
 #src-spel-right #spelpijl4 {
+    border-radius:4px;
     width: 30px;
     height: 35px;
     left: 295px;

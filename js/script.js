@@ -228,20 +228,22 @@ function writePlayerPos(){
     }else{console.log("ik snap het ook niet")}
 };
 
+var arrowPos = document.getElementById("spelpijl1");
+
 function rolClick(){
     document.getElementById("nogeenkeer").style.visibility = "hidden";
     if (position >= players.length){
         position = 0;
     };
     currentPlayer = players[position++];
-    if(position == 0){
-        console.log("Pijl 1 wordt getoont")
+    if(position == 4){
+        arrowPos.style.top = '170px';
     }else if(position == 1){
-        console.log("Pijl 2 wordt getoont")
+        arrowPos.style.top = '337px';
     }else if(position == 2){
-        console.log("Pijl 3 wordt getoont")
+        arrowPos.style.top = '497px';
     }else if(position == 3){
-        console.log("Pijl 4 wordt getoont")
+        arrowPos.style.top = '664px';
     };
     var rollen = Math.floor(Math.random() * 6) + 1;
     if (rollen === 1){
