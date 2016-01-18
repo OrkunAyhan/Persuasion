@@ -210,6 +210,7 @@ var highest = 63;
 var position = 0;
 var currentPlayer = players[position];
 
+
 function writePlayerPos(){
     if(players.length === 1) {
         document.getElementById("p1position").innerHTML = players[0].positie;
@@ -245,6 +246,7 @@ function rolClick(){
     }else if(position == 3){
         arrowPos.style.top = '664px';
     };
+
     var rollen = Math.floor(Math.random() * 6) + 1;
     if (rollen === 1){
         currentPlayer.positie += 1;
@@ -265,8 +267,9 @@ function rolClick(){
         currentPlayer.positie += 6;
         document.getElementById("rolloutcome").innerHTML = currentPlayer.name + " heeft 6 gegooid!";
     }else {};
-    writePlayerPos();
+    //writePlayerPos();
     locForTest();
+    var resterend = currentPlayer.positie - highest;
     if(currentPlayer.positie === 6){
         players[position--];
         document.getElementById("nogeenkeer").style.visibility = "visible";
@@ -280,12 +283,13 @@ function rolClick(){
         console.log("je stond op 42");
         setTimeout(function(){currentPlayer.positie = 39;}, 3000);
         writePlayerPos();
-    }else if(currentPlayer.positie ===59){
+    }else if(currentPlayer.positie === 59){
         currentPlayer.positie = 0;
+    }else if(currentPlayer.positie > highest){
+        currentPlayer.positie -= resterend;
     };
-
-    if(currentPlayer.positie > highest) {return highest-1;}
-
+    writePlayerPos();
+    console.log(resterend);
     console.log(currentPlayer);
 };
 
