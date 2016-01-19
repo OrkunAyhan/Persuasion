@@ -675,10 +675,10 @@ input{
 
 .dropzone {
     /*background-color: rgba(138,201,117,0.5);*/
-    width: 60px;
+    width: 200px;
     height: 100px;
     position: absolute;
-    right: 225px;
+    right: 70px;
     bottom: 105px;
     z-index: 100;
     transition: background-color 0.3s;
@@ -725,7 +725,7 @@ input{
 }
 
     .drag-drop:nth-of-type(1) {
-        top: 281px;
+        top: 275px;
         left: 198px;
     }
 

@@ -81,6 +81,7 @@ spelerPijl();
 // http://jsfiddle.net/hf27hn0c/6/
 function taskOne() {
 var finished = document.querySelectorAll("#scr-task-1");
+
 // Dropzone = Waar de elementen in geslepen gaan worden
 // "interact" is om aan te geven dat het genoemde element 
 // interactie mogelijkheden krijgt.
@@ -119,14 +120,21 @@ interact('.dropzone')
     })
     // Dit is de textuele feedback voor wanneer het in de 
     // dropzone losgelaten wordt
-    // .on('drop', function(event) {
+//BAD  .on('drop', function(event) {
     //     event.relatedTarget.classList.add('dropped');
     // });
+    
     .on('drop', function stopOpdracht(finished) {
-        // classList.add('eindigen');
-        document.getElementById('scr-task-1').classList.remove('beginTask');
-        // document.getElementById('scr-task-1').classList.add('eindigTask');
+        setTimeout(function() {
+            document.getElementById('scr-task-1').classList.remove('beginTask');  
+            // document.getElementById('scr-task-1').classList.add('eindigTask');
+        }, 5000);
     });
+
+//BAD  .on('drop', setTimeout(function stopOpdracht(finished) {
+    //     document.getElementById('scr-task-1').classList.remove('beginTask');
+    //     // document.getElementById('scr-task-1').classList.add('eindigTask');
+    // }, 5000));
 
 // Hiermee kunnen we elementen "drap 'n drop" baar maken
 // Door de class="drag-drop" toe te voegen kan je dit doen.
@@ -312,33 +320,67 @@ var players = [
 function locForTest(){
     if(currentPlayer.positie === 5){
         console.log(currentPlayer.name, " staat op vakje 5")
-        document.getElementById('scr-task-1').classList.add('beginTask')
-        // document.getElementById('scr-task-1').classList.remove('eindigTask');
         taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
     }else if(currentPlayer.positie === 9){
         console.log(currentPlayer.name, " staat op vakje 9")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 14){
         console.log(currentPlayer.name, " staat op vakje 14")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 18){
         console.log(currentPlayer.name, " staat op vakje 18")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 23){
         console.log(currentPlayer.name, " staat op vakje 23")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 27){
         console.log(currentPlayer.name, " staat op vakje 27")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 32){
         console.log(currentPlayer.name, " staat op vakje 32")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 36){
         console.log(currentPlayer.name, " staat op vakje 36")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
     }else if(currentPlayer.positie === 41){
         console.log(currentPlayer.name, " staat op vakje 41")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 45){
         console.log(currentPlayer.name, " staat op vakje 45")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 50){
         console.log(currentPlayer.name, " staat op vakje 50")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 54){
         console.log(currentPlayer.name, " staat op vakje 54")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }else if(currentPlayer.positie === 58){
         console.log(currentPlayer.name, " staat op vakje 58")
+        taskOne()
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask')
     }
 };
 
