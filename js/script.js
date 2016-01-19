@@ -411,14 +411,14 @@ function bekerDice() {
 // "interact" is om aan te geven dat het genoemde element 
 // interactie mogelijkheden krijgt.
 interact('.dropzone')
-// Enable draggables to be dropped into this
-  .dropzone(true)
-// only accept elements matching this CSS selector
-  .accept('#yes-drop')
+    // Enable draggables to be dropped into this
+    .dropzone(true)
+    // only accept elements matching this CSS selector
+    .accept('#yes-drop')
     // listen for drop related events
     // 'dragenter' zorgt ervoor dat er een interactie plaats vind 
     // wanneer er wat over de dropzone komt 
-    on('dragenter', function(event) {
+    .on('dragenter', function(event) {
         // event.relatedTarget is het element dat wordt gesleept.
         var draggableElement = event.relatedTarget,
         // event.target is het element van de dropzone, dit wordt uit 
@@ -443,29 +443,32 @@ interact('.dropzone')
     })
     // Dit is de textuele feedback voor wanneer het in de 
     // dropzone losgelaten wordt
-  // .on('drop', function(event) {
-  //    event.relatedTarget.textContent = 'Dropped';
-  // });
+    .on('drop', function(event) {
+        event.relatedTarget.classList.add('dropped');
+    });
 
 // Hiermee kunnen we elementen "drap 'n drop" baar maken
 // Door de class="drag-drop" toe te voegen kan je dit doen.
 interact('.drag-drop')
-  .draggable({
-    // Dit zorgt er allemaal voor dat je het kan rondbewegen 
-    // en dat het blijft staan op de plek waar je het loslaat
-    onmove: function(event) {
-      var target = event.target;
-
-      target.x = (target.x | 0) + event.dx;
-      target.y = (target.y | 0) + event.dy;
-
-      target.style.webkitTransform = target.style.transform
-        'translate(' + target.x + 'px, ' + target.y + 'px)';
-    }
-  })
+    .draggable({
+        // Dit zorgt er allemaal voor dat je het kan rondbewegen 
+        // en dat het blijft staan op de plek waar je het loslaat
+        onmove: function (event) {
+            var target = event.target,
+            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+    
+            target.style.webkitTransform =
+            target.style.transform =
+                'translate(' + x + 'px, ' + y + 'px)';
+    
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+        },
+    })
 
 // Dit laat het drap 'n drop gebeure vloeiend lopen
-  .inertia(true)
-  .restrict({
-    drag: 'parent'
-  });
+    .inertia(true)
+    .restrict({
+        drag: 'parent'
+    });
