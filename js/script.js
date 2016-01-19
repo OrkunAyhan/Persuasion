@@ -210,6 +210,33 @@ var highest = 63;
 var position = 0;
 var currentPlayer = players[position];
 
+function pijl4play(){
+    if(position == 4){
+        arrowPos.style.top = '170px';
+    }else if(position == 1){
+        arrowPos.style.top = '337px';
+    }else if(position == 2){
+        arrowPos.style.top = '497px';
+    }else if(position == 3){
+        arrowPos.style.top = '664px';
+    };
+}
+function pijl3play(){
+    if(position == 3){
+        arrowPos.style.top = '170px';
+    }else if(position == 1){
+        arrowPos.style.top = '337px';
+    }else if(position == 2){
+        arrowPos.style.top = '497px';
+    };
+}
+function pijl2play(){
+    if(position == 2){
+        arrowPos.style.top = '170px';
+    }else if(position == 1){
+        arrowPos.style.top = '337px';
+    };
+}
 
 function writePlayerPos(){
     if(players.length === 1) {
@@ -237,15 +264,13 @@ function rolClick(){
         position = 0;
     };
     currentPlayer = players[position++];
-    if(position == 4){
-        arrowPos.style.top = '170px';
-    }else if(position == 1){
-        arrowPos.style.top = '337px';
-    }else if(position == 2){
-        arrowPos.style.top = '497px';
-    }else if(position == 3){
-        arrowPos.style.top = '664px';
-    };
+    if(players.length === 4){
+        pijl4play();
+    }else if(players.length === 3){
+        pijl3play();
+    }else if(players.length === 2){
+        pijl2play();
+    }
 
     var rollen = Math.floor(Math.random() * 6) + 1;
     if (rollen === 1){
@@ -286,10 +311,12 @@ function rolClick(){
     }else if(currentPlayer.positie === 59){
         currentPlayer.positie = 0;
     }else if(currentPlayer.positie > highest){
+        console.log(currentPlayer.positie -= resterend);
         currentPlayer.positie -= resterend;
+    }else if(currentPlayer.positie === 63){
+        console.log("WINWINWINWINWINWINWINWINWINWINWINWINWINWINWINWINWIN");
     };
     writePlayerPos();
-    console.log(resterend);
     console.log(currentPlayer);
 };
 
