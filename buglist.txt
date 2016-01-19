@@ -1,0 +1,5 @@
+-pijltjes bij dubbel gooien
+19, 31, 52
+players-> nieuw var(in object) = overslaan(staat op 0)
+bij komen op vakje met batterij, overslaan +1 of +3
+voordat je rolt wordt er getest op overslaan, als het 0 is mag je gooien, anders overslaan --

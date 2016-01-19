@@ -140,19 +140,23 @@ function writeNames(){
 var players = [
     {
         name: "Speler 1",
-        positie: 0
+        positie: 0,
+        overslaan:0
     },
     {
         name: "Speler 2",
-        positie: 0
+        positie: 0,
+        overslaan:0
     },
     {
         name: "Speler 3",
-        positie: 0
+        positie: 0,
+        overslaan:0
     },
     {
         name: "Speler 4",
-        positie: 0
+        positie: 0,
+        overslaan:0
     }
 ];
 
@@ -257,6 +261,7 @@ function writePlayerPos(){
 };
 
 var arrowPos = document.getElementById("spelpijl1");
+var skipTurn = currentPlayer.overslaan;
 
 function rolClick(){
     document.getElementById("nogeenkeer").style.visibility = "hidden";
@@ -264,13 +269,18 @@ function rolClick(){
         position = 0;
     };
     currentPlayer = players[position++];
-    if(players.length === 4){
-        pijl4play();
-    }else if(players.length === 3){
-        pijl3play();
-    }else if(players.length === 2){
-        pijl2play();
+    if(currentPlayer.overslaan > 0){
+        currentPlayer.overslaan--;
+        if(players.length === 4){
+            pijl4play();
+        }else if(players.length === 3){
+            pijl3play();
+        }else if(players.length === 2){
+            pijl2play();
+        }
+        return;
     }
+
 
     var rollen = Math.floor(Math.random() * 6) + 1;
     if (rollen === 1){
@@ -304,6 +314,12 @@ function rolClick(){
     }else if(currentPlayer.positie === 53){
         players[position--];
         document.getElementById("nogeenkeer").style.visibility = "visible";
+    }else if(currentPlayer.positie === 19){
+        currentPlayer.overslaan++;
+    }else if(currentPlayer.positie === 31){
+        currentPlayer.overslaan += 3;
+    }else if(currentPlayer.positie === 52){
+        currentPlayer.overslaan += 3;
     }else if(currentPlayer.positie === 42){
         console.log("je stond op 42");
         setTimeout(function(){currentPlayer.positie = 39;}, 3000);
@@ -314,10 +330,19 @@ function rolClick(){
         console.log(currentPlayer.positie -= resterend);
         currentPlayer.positie -= resterend;
     }else if(currentPlayer.positie === 63){
-        console.log("WINWINWINWINWINWINWINWINWINWINWINWINWINWINWINWINWIN");
+        document.getElementById("f-gewonnen").style.visibility = "visible";
+        document.getElementById("dobbelsteen").remove();
+        console.log("WIN");
     };
     writePlayerPos();
     console.log(currentPlayer);
+    if(players.length === 4){
+        pijl4play();
+    }else if(players.length === 3){
+        pijl3play();
+    }else if(players.length === 2){
+        pijl2play();
+    }
 };
 
 // ==========================================
