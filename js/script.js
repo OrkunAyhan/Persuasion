@@ -352,10 +352,55 @@ var pijlen = document.querySelectorAll("#spelpijl1, #spelpijl2, #spelpijl3, #spe
 var tlPijlen = new TimelineMax
 
 function spelerPijl() {
-    tlPijlen.to(pijlen, 1, {repeat: -1, yoyo:true, ease: Power1.easeInOut, x: 10})
+    tlPijlen.to(pijlen, 1, {
+        repeat: -1, 
+        yoyo: true, 
+        ease: Power1.easeInOut, 
+        x: 10
+    })
 };
 
-spelerPijl();
+var beker = document.querySelectorAll("#d-beker");
+var diceButton = document.querySelectorAll("#click");
+var tlBeker = new TimelineMax
+var tlDice = new TimelineMax
+
+function bekerShake() {
+    tlBeker.to(beker, 0.5, {
+        transformOrigin: "50% 40%",
+        yoyo: true,
+        rotation: 8,
+        repeat: -1,
+        // ease: Elastic.easeInOut.config(1, 0.5)
+        ease: Power1.easeInOut
+
+    })
+};
+
+function bekerDice() {
+    tlDice.to(diceButton, 0.5, {
+        opacity: 0
+    }, 3),
+    tlDice.to(beker, 1, {
+        rotation: 180
+    }, 3.5),
+    tlDice.to(beker, 1.5, {
+        y: -500
+    }, 4.7),
+    tlDice.to(beker, 1.5, {
+        y: 0
+    }, 11.2),
+    tlDice.to(beker, 1, {
+        rotation: 0
+    }, 12.7),
+    tlDice.to(diceButton, 0.5, {
+        opacity: 1
+    })
+};
+
+// spelerPijl();
+// bekerShake();
+// bekerDice();
 
 // ==========================================
 // ===============DRAG 'N DROP===============
@@ -370,50 +415,51 @@ interact('.dropzone')
   .dropzone(true)
 // only accept elements matching this CSS selector
   .accept('#yes-drop')
-// listen for drop related events
-// 'dragenter' zorgt ervoor dat er een interactie plaats vind 
-// wanneer er wat over de dropzone komt 
-  .on('dragenter', function(event) {
-// event.relatedTarget is het element dat wordt gesleept.
-    var draggableElement = event.relatedTarget,
-// event.target is het element van de dropzone, dit wordt uit 
-// de code gelezen
-      dropzoneElement = event.target;
+    // listen for drop related events
+    // 'dragenter' zorgt ervoor dat er een interactie plaats vind 
+    // wanneer er wat over de dropzone komt 
+    on('dragenter', function(event) {
+        // event.relatedTarget is het element dat wordt gesleept.
+        var draggableElement = event.relatedTarget,
+        // event.target is het element van de dropzone, dit wordt uit 
+        // de code gelezen
+        dropzoneElement = event.target;
 
-// Visuele en textuele feedback wanneer elementen 
-// gesleept worden.
-    dropzoneElement.classList.add('drop-target');
-    draggableElement.classList.add('can-drop');
-// draggableElement.textContent = 'Dragged in';
-  })
-// 'dragleave' wordt activeerd wanneer de gerelateerde 
-// elementen de dropzone verlaten
-  .on('dragleave', function(event) {
-// Dit haalt de visuele en textuele feedback van 
-// hierboven weg
-    event.target.classList.remove('drop-target');
-    event.relatedTarget.classList.remove('can-drop');
-// event.relatedTarget.textContent = 'Dragged out';
-  })
-// Dit is de textuele feedback voor wanneer het in de 
-// dropzone losgelaten wordt
+        // Visuele en textuele feedback wanneer elementen 
+        // gesleept worden.
+        dropzoneElement.classList.add('drop-target');
+        draggableElement.classList.add('can-drop');
+        dropzoneElement.classList.add('resultaat');
+    // draggableElement.textContent = 'Dragged in';
+    })
+    // 'dragleave' wordt activeerd wanneer de gerelateerde 
+    // elementen de dropzone verlaten
+    .on('dragleave', function(event) {
+    // Dit haalt de visuele en textuele feedback van 
+    // hierboven weg
+        event.target.classList.remove('drop-target');
+        event.relatedTarget.classList.remove('can-drop');
+    // event.relatedTarget.textContent = 'Dragged out';
+    })
+    // Dit is de textuele feedback voor wanneer het in de 
+    // dropzone losgelaten wordt
   // .on('drop', function(event) {
-  //   event.relatedTarget.textContent = 'Dropped';
+  //    event.relatedTarget.textContent = 'Dropped';
   // });
 
 // Hiermee kunnen we elementen "drap 'n drop" baar maken
 // Door de class="drag-drop" toe te voegen kan je dit doen.
 interact('.drag-drop')
   .draggable({
-// Dit zorgt er allemaal voor dat je het kan rondbewegen 
-// en dat het blijft staan op de plek waar je het loslaat
+    // Dit zorgt er allemaal voor dat je het kan rondbewegen 
+    // en dat het blijft staan op de plek waar je het loslaat
     onmove: function(event) {
       var target = event.target;
 
       target.x = (target.x | 0) + event.dx;
       target.y = (target.y | 0) + event.dy;
 
-      target.style.webkitTransform = target.style.transform =
+      target.style.webkitTransform = target.style.transform
         'translate(' + target.x + 'px, ' + target.y + 'px)';
     }
   })

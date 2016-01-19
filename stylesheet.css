@@ -48,12 +48,18 @@ body {
     padding:20px*/
 }
 
-h1{
+h1 {
     font-family: 'Adobe Caslon Pro', serif;
     font-size: 2em;
     font-weight: 200;
     padding: 20px 0 0 0;
 }
+
+h2,
+h3 {
+    color: #1A1A1A;
+}
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~HOME~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -528,39 +534,136 @@ input{
 /*===============TASK 1===============*/
 #scr-task-1 {
     width: 724px;
-    height: 470px;
     position: absolute;
     float: right;
     z-index: 900;
     bottom: 0;
-    /*background-color: #C6BDA1;*/
     box-sizing: border-box;
-/*    border: 15px solid #F8ECC9;*/
-    display: none;
-
+    margin: 0;
+    /*display: none;*/
 }
 
-    #scr-task-1 section {
+    #scr-task-1 h2,
+    #scr-task-1 h3 {
+        margin: 0;
+    }
+
+#task-up {
+    position: relative;
+    height: 285px;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: #F8ECC9;
+}
+
+    #task-up h3 {
+        font-family: 'GeorgiaPro-Light';
+        font-size: 24px;
+        text-align: center;
+        width: 405px;
+        margin: 0 auto;
+    }
+
+        #task-up > h3 {
+            top: 30px;
+            position: relative;
+            line-height: 1.2em;
+        }
+
+        #task-up > div {
+            top: 40px;
+            position: relative;
+        }
+
+        #task-up > div h3 {
+            font-family: 'GeorgiaPro-Regular';
+        }
+
+    #task-up h2 {
+        font-family: 'GeorgiaPro-Regular';
+        font-size: 30px;
+        text-align: center;
+        width: 500px;
+        margin: 0 auto;
+        top: 100px;
+        position: relative;
+    }
+
+.hart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    display: inline;
+    right: 12px;
+    top: 6px;
+}
+
+    .hart:nth-of-type(1) {
+        margin-right: 45px;
+    }
+
+    .hart:nth-of-type(3) {
+        margin-left: 45px;
+    }
+
+    .hart:before,
+    .hart:after {
+        position: absolute;
+        content: "";
+        left: 15px;
+        top: 0;
+        width: 15px;
+        height: 25px;
+        background: red;
+        -moz-border-radius: 50px 50px 0 0;
+        border-radius: 50px 50px 0 0;
+        -webkit-transform: rotate(-45deg);
+           -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+             -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 0 100%;
+           -moz-transform-origin: 0 100%;
+            -ms-transform-origin: 0 100%;
+             -o-transform-origin: 0 100%;
+                transform-origin: 0 100%;
+    }
+    .hart:after {
+        left: 0;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+        -webkit-transform-origin: 100% 100%;
+           -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+             -o-transform-origin: 100% 100%;
+                transform-origin :100% 100%;
+    }
+
+#task-down {
         position: absolute;
         right: 0;
         bottom: 0;
         width: 100%;
-        height: 100%;
+        height: 470px;
         z-index: 999;
     }
 
-        #scr-task-1 section > div:nth-of-type(1) {
-            width: 60px;
-            height: 60px;
-            border: none;
-        }
+    #task-down > div:nth-of-type(1) {
+        width: 60px;
+        height: 60px;
+        border: none;
+    }
 
     #scr-task-1 img {
         width: 100%;
         height: 100%;
     }
 
-.square {
+/*.square {
     width: 100px;
     height: 100px;
     background-color: #4f9374;
@@ -571,7 +674,7 @@ input{
     height: 100px;
     border-radius: 50%;
     background-color: #4f9374;
-}
+}*/
 
 .arrow {
     width: 40px;
@@ -592,7 +695,7 @@ input{
 }*/
 
 .dropzone {
-    background-color: rgba(138,201,117,0.5);
+    /*background-color: rgba(138,201,117,0.5);*/
     width: 60px;
     height: 100px;
     position: absolute;
@@ -600,12 +703,16 @@ input{
     bottom: 105px;
     z-index: 100;
     transition: background-color 0.3s;
+    opacity: 0;
 }
 
 .drop-target {
-    background-color: #8AC975;
+    background-color: rgba(138,201,117,1);
 }
 
+
+/*DIT STAAT DUBBEL
+CHECK ER ONDER*/
 .drag-drop {
     display: inline-block;
     box-sizing: border-box; 
@@ -620,9 +727,26 @@ input{
     background-color: #4e4;
 }
 
+.resultaat {
+    /*background-color: red;*/
+    width: 480px;
+    height: 110px;
+    position: absolute;
+    bottom: 290px;
+    right: 111px;
+    font-size: 30px;
+    font-family: 'GeorgiaPro-Regular';
+    color: #FFF;
+    opacity: 1;
+    text-align: center;
+    border: 10px solid rgba(138,201,117,1);
+    border-radius: 5px;
+}
+
 .drag-drop {
     display: block;
     position: absolute;
+    z-index: 999;
 }
 
     .drag-drop:nth-of-type(1) {
