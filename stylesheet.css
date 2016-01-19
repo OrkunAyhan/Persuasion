@@ -525,7 +525,7 @@ input{
     bottom: 0;
     box-sizing: border-box;
     margin: 0;
-    display: none;
+    /*display: none;*/
 }
 
     #scr-task-1 h2,
@@ -753,6 +753,16 @@ input{
 .shape-outline {
     background-color: #FFFFFF;
     border: 5px solid #4f9374;  
+}
+
+.eindigTask {
+    visibility: hidden;
+    /*animation-delay: 5s;*/
+    /*opacity: 0;*/
+}
+
+.beginTask {
+    visibility: visible;
 }
 /*=============END TASK 1=============*/
 /*====================================*/

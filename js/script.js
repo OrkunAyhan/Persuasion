@@ -11,6 +11,153 @@ function reloadPage(){
     window.location.reload();
 };
 
+// ==========================================
+// =================ANIMATIES================
+// ==========================================
+var pijlen = document.querySelectorAll("#spelpijl1, #spelpijl2, #spelpijl3, #spelpijl4");
+var tlPijlen = new TimelineMax
+
+function spelerPijl() {
+    tlPijlen.to(pijlen, 1, {
+        repeat: -1, 
+        yoyo: true, 
+        ease: Power1.easeInOut, 
+        x: 10
+    })
+};
+
+// var beker = document.querySelectorAll("#d-beker");
+// var tlBeker = new TimelineMax
+
+// function bekerShake() {
+//     tlBeker.to(beker, 0.5, {
+//         transformOrigin: "50% 40%",
+//         yoyo: true,
+//         rotation: 8,
+//         repeat: -1,
+//         ease: Power1.easeInOut
+//     })
+// };
+
+// var diceButton = document.querySelectorAll("#click");
+// var tlDice = new TimelineMax
+
+// function bekerDice() {
+//     tlDice.to(diceButton, 0.5, {
+//         opacity: 0
+//     }, 3),
+//     tlDice.to(beker, 1, {
+//         rotation: 180
+//     }, 3.5),
+//     tlDice.to(beker, 1.5, {
+//         y: -500
+//     }, 4.7),
+//     tlDice.to(beker, 1.5, {
+//         y: 0
+//     }, 11.2),
+//     tlDice.to(beker, 1, {
+//         rotation: 0
+//     }, 12.7),
+//     tlDice.to(diceButton, 0.5, {
+//         opacity: 1
+//     })
+// };
+
+// function restartAnim() {
+//     tlDice.play();
+// };
+
+spelerPijl();
+// bekerShake();
+// bekerDice();
+
+// ==========================================
+// ===============DRAG 'N DROP===============
+// ==========================================
+
+// =================SUPPORT==================
+// http://jsfiddle.net/hf27hn0c/6/
+// http://interactjs.io/
+// http://jsfiddle.net/hf27hn0c/6/
+function taskOne() {
+var finished = document.querySelectorAll("#scr-task-1");
+// Dropzone = Waar de elementen in geslepen gaan worden
+// "interact" is om aan te geven dat het genoemde element 
+// interactie mogelijkheden krijgt.
+interact('.dropzone')
+    // Enable draggables to be dropped into this
+
+
+    .dropzone(true)
+    // only accept elements matching this CSS selector
+    .accept('#yes-drop')
+    // listen for drop related events
+    // 'dragenter' zorgt ervoor dat er een interactie plaats vind 
+    // wanneer er wat over de dropzone komt 
+    .on('dragenter', function(event) {
+        // event.relatedTarget is het element dat wordt gesleept.
+        var draggableElement = event.relatedTarget,
+                // event.target is het element van de dropzone, dit wordt uit 
+        // de code gelezen
+        dropzoneElement = event.target;
+
+        // Visuele en textuele feedback wanneer elementen 
+        // gesleept worden.
+        dropzoneElement.classList.add('drop-target');
+        draggableElement.classList.add('can-drop');
+        dropzoneElement.classList.add('resultaat');
+    // draggableElement.textContent = 'Dragged in';
+    })
+    // 'dragleave' wordt activeerd wanneer de gerelateerde 
+    // elementen de dropzone verlaten
+    .on('dragleave', function(event) {
+    // Dit haalt de visuele en textuele feedback van 
+    // hierboven weg
+        event.target.classList.remove('drop-target');
+        event.relatedTarget.classList.remove('can-drop');
+    // event.relatedTarget.textContent = 'Dragged out';
+    })
+    // Dit is de textuele feedback voor wanneer het in de 
+    // dropzone losgelaten wordt
+    // .on('drop', function(event) {
+    //     event.relatedTarget.classList.add('dropped');
+    // });
+    .on('drop', function stopOpdracht(finished) {
+        // classList.add('eindigen');
+        document.getElementById('scr-task-1').classList.remove('beginTask');
+        // document.getElementById('scr-task-1').classList.add('eindigTask');
+    });
+
+// Hiermee kunnen we elementen "drap 'n drop" baar maken
+// Door de class="drag-drop" toe te voegen kan je dit doen.
+interact('.drag-drop')
+    .draggable({
+        // Dit zorgt er allemaal voor dat je het kan rondbewegen 
+        // en dat het blijft staan op de plek waar je het loslaat
+        onmove: function (event) {
+            var target = event.target,
+            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+    
+            target.style.webkitTransform =
+            target.style.transform =
+                'translate(' + x + 'px, ' + y + 'px)';
+    
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+        },
+    })
+
+// Dit laat het drap 'n drop gebeure vloeiend lopen
+    .inertia(true)
+    .restrict({
+        drag: 'parent'
+    });
+};
+// ==========================================
+// =============END DRAG 'N DROP=============
+// ==========================================
+
 var playerNumber = ["P1", "P2", "P3", "P4"];
 
 function changePlayers(){
@@ -165,6 +312,9 @@ var players = [
 function locForTest(){
     if(currentPlayer.positie === 5){
         console.log(currentPlayer.name, " staat op vakje 5")
+        document.getElementById('scr-task-1').classList.add('beginTask')
+        // document.getElementById('scr-task-1').classList.remove('eindigTask');
+        taskOne()
     }else if(currentPlayer.positie === 9){
         console.log(currentPlayer.name, " staat op vakje 9")
     }else if(currentPlayer.positie === 14){
@@ -279,7 +429,7 @@ function rolClick(){
             pijl2play();
         }
         return;
-    }
+    };
 
 
     var rollen = Math.floor(Math.random() * 6) + 1;
@@ -344,131 +494,3 @@ function rolClick(){
         pijl2play();
     }
 };
-
-// ==========================================
-// =================ANIMATIES================
-// ==========================================
-var pijlen = document.querySelectorAll("#spelpijl1, #spelpijl2, #spelpijl3, #spelpijl4");
-var tlPijlen = new TimelineMax
-
-function spelerPijl() {
-    tlPijlen.to(pijlen, 1, {
-        repeat: -1, 
-        yoyo: true, 
-        ease: Power1.easeInOut, 
-        x: 10
-    })
-};
-
-var beker = document.querySelectorAll("#d-beker");
-var diceButton = document.querySelectorAll("#click");
-var tlBeker = new TimelineMax
-var tlDice = new TimelineMax
-
-function bekerShake() {
-    tlBeker.to(beker, 0.5, {
-        transformOrigin: "50% 40%",
-        yoyo: true,
-        rotation: 8,
-        repeat: -1,
-        // ease: Elastic.easeInOut.config(1, 0.5)
-        ease: Power1.easeInOut
-
-    })
-};
-
-function bekerDice() {
-    tlDice.to(diceButton, 0.5, {
-        opacity: 0
-    }, 3),
-    tlDice.to(beker, 1, {
-        rotation: 180
-    }, 3.5),
-    tlDice.to(beker, 1.5, {
-        y: -500
-    }, 4.7),
-    tlDice.to(beker, 1.5, {
-        y: 0
-    }, 11.2),
-    tlDice.to(beker, 1, {
-        rotation: 0
-    }, 12.7),
-    tlDice.to(diceButton, 0.5, {
-        opacity: 1
-    })
-};
-
-// spelerPijl();
-// bekerShake();
-// bekerDice();
-
-// ==========================================
-// ===============DRAG 'N DROP===============
-// ===============w/ COMMENTS================
-// ==========================================
-
-// Dropzone = Waar de elementen in geslepen gaan worden
-// "interact" is om aan te geven dat het genoemde element 
-// interactie mogelijkheden krijgt.
-interact('.dropzone')
-    // Enable draggables to be dropped into this
-    .dropzone(true)
-    // only accept elements matching this CSS selector
-    .accept('#yes-drop')
-    // listen for drop related events
-    // 'dragenter' zorgt ervoor dat er een interactie plaats vind 
-    // wanneer er wat over de dropzone komt 
-    .on('dragenter', function(event) {
-        // event.relatedTarget is het element dat wordt gesleept.
-        var draggableElement = event.relatedTarget,
-        // event.target is het element van de dropzone, dit wordt uit 
-        // de code gelezen
-        dropzoneElement = event.target;
-
-        // Visuele en textuele feedback wanneer elementen 
-        // gesleept worden.
-        dropzoneElement.classList.add('drop-target');
-        draggableElement.classList.add('can-drop');
-        dropzoneElement.classList.add('resultaat');
-    // draggableElement.textContent = 'Dragged in';
-    })
-    // 'dragleave' wordt activeerd wanneer de gerelateerde 
-    // elementen de dropzone verlaten
-    .on('dragleave', function(event) {
-    // Dit haalt de visuele en textuele feedback van 
-    // hierboven weg
-        event.target.classList.remove('drop-target');
-        event.relatedTarget.classList.remove('can-drop');
-    // event.relatedTarget.textContent = 'Dragged out';
-    })
-    // Dit is de textuele feedback voor wanneer het in de 
-    // dropzone losgelaten wordt
-    .on('drop', function(event) {
-        event.relatedTarget.classList.add('dropped');
-    });
-
-// Hiermee kunnen we elementen "drap 'n drop" baar maken
-// Door de class="drag-drop" toe te voegen kan je dit doen.
-interact('.drag-drop')
-    .draggable({
-        // Dit zorgt er allemaal voor dat je het kan rondbewegen 
-        // en dat het blijft staan op de plek waar je het loslaat
-        onmove: function (event) {
-            var target = event.target,
-            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-    
-            target.style.webkitTransform =
-            target.style.transform =
-                'translate(' + x + 'px, ' + y + 'px)';
-    
-            target.setAttribute('data-x', x);
-            target.setAttribute('data-y', y);
-        },
-    })
-
-// Dit laat het drap 'n drop gebeure vloeiend lopen
-    .inertia(true)
-    .restrict({
-        drag: 'parent'
-    });
