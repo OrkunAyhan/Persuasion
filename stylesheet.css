@@ -346,7 +346,7 @@ input{
     width: 30px;
     height: 35px;
     left: 295px;
-    background-color: #4f9374;
+    background-color: #ef693a;
     -webkit-clip-path: polygon(30% 50%, 100% 100%, 100% 0);
     clip-path: polygon(30% 50%, 100% 100%, 100% 0);
 }
@@ -525,7 +525,7 @@ input{
     bottom: 0;
     box-sizing: border-box;
     margin: 0;
-    /*display: none;*/
+    display: none;
 }
 
     #scr-task-1 h2,
